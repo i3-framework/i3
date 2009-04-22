@@ -1,0 +1,61 @@
+#
+# File: <%= model_path %>
+#
+# Describe the data models that are defined in this file.
+#
+# Credits:
+# 
+#   Written by <%= credit %>.
+# 
+# Copyright / License:
+# 
+#   <%= copyright %>
+# 
+#   Licensed under the Apache License, Version 2.0 (the "License");
+#   you may not use this file except in compliance with the License.
+#   You may obtain a copy of the License at
+# 
+#     http://www.apache.org/licenses/LICENSE-2.0
+# 
+#   Unless required by applicable law or agreed to in writing, software
+#   distributed under the License is distributed on an "AS IS" BASIS,
+#   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+#   See the License for the specific language governing permissions and
+#   limitations under the License.
+#
+# Version:
+#   <%= version %>
+#
+
+#
+# Module: <%= module_name %>
+#
+# The module containing all <%= tool_name %> classes and data.
+#
+module <%= module_name %>
+
+<% if model_class_name.to_s.empty? %>
+  #
+  # Data Model: <%= module_name %>::<%= module_name %>Record
+  #
+  # Defines the base record class for the <%= tool_name %> tool.
+  #
+  class <%= module_name %>Record < I3::Record
+    set_db_name I3.config.tools["<%= tool_dir %>"].database
+  end #class <%= module_name %>Record
+  
+  # --------------------------------------------------------------------------
+  
+  
+<% else %>
+  #
+  # Data Model: <%= module_name %>::<%= model_class_name %>
+  #
+  # Defines the data model for the <%= model_title %> class.
+  #
+  class <%= model_class_name %> < I3::Record
+    
+  end #class <%= model_class_name %>
+<% end #if %>
+
+end #module <%= module_name %>

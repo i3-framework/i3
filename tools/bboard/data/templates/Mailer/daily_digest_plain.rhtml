@@ -1,0 +1,86 @@
+<%
+time_format = "%A, %B %d, %Y %I:%M %p %Z"
+%>
+Summary of activity for <%= @date %>:
+<% 
+@topics.sort! { |a,b| a.name <=> b.name }.each do |topic|
+  new_count     = @new_articles[topic.permalink].to_a.size 
+  updated_count = @updated_articles[topic.permalink].to_a.size
+  next if new_count == 0 and updated_count == 0
+%>
+  * <%= topic.name %> - <%= new_count > 0 ? "#{new_count} new" : "" %><%= updated_count > 0 ? (new_count > 0 ? ", " : "") + "#{updated_count} updated" : "" %><% end #each %>
+
+<%
+@topics.each do |topic|
+  permalink_base = "#{@permalink_base}/topics/#{topic.permalink}"
+%>
+=============================================================================
+<%= topic.name %>
+=============================================================================
+<%
+  # Add the new articles
+  if @new_articles[topic.permalink].to_a.size > 0
+    @new_articles[topic.permalink].sort { |a,b| a.posted_at <=> b.posted_at }.each do |article|
+      article_link = permalink_base + "/#{article.posted_at.year}" + 
+        "/#{article.posted_at.mon.to_s.rjust(2,"0")}" + 
+        "/#{article.posted_at.day.to_s.rjust(2,"0")}" + 
+        "/#{article.permalink}"
+%>
++---------------------------------------------------------------------------+
+<%= "#{article.subject} - NEW" %>
+<%= article_link %>
++---------------------------------------------------------------------------+
+
+From: <%= "#{article.author.full_name} <#{article.author.email}>" %>
+Date: <%= article.posted_at.strftime(time_format) %>
+
+<%= article.text %>
+
+<%    article.comments.each do |comment| %>---------------------------------------
+From: <%= "#{comment.author.full_name} <#{comment.author.email}>" %>
+Date: <%= comment.posted_at.strftime(time_format) %>
+
+<%= comment.text %>
+
+<%
+      end # article.comments.each do |comment|
+    end # @new_articles[topic.permalink].each
+  end # if @new_articles[topic.permalink].size > 0
+  
+  # Now add the updated articles
+  if @updated_articles[topic.permalink].to_a.size > 0
+    @updated_articles[topic.permalink].each do |article|
+      article_link = permalink_base + "/#{article.posted_at.year}" + 
+        "/#{article.posted_at.mon.to_s.rjust(2,"0")}" + 
+        "/#{article.posted_at.day.to_s.rjust(2,"0")}" + 
+        "/#{article.permalink}"
+%>
++---------------------------------------------------------------------------+
+<%= "#{article.subject} - UPDATED" %>
+<%= article_link %>
++---------------------------------------------------------------------------+
+<%
+      is_first_comment = true
+      article.comments.each do |comment|
+        next unless @date == comment.posted_at.strftime("%Y-%m-%d")
+%><% unless is_first_comment %>---------------------------------------<% end %>
+From: <%= "#{comment.author.full_name} <#{comment.author.email}>" %>
+Date: <%= comment.posted_at.strftime(time_format) %>
+
+<%= comment.text %>
+
+<%
+        is_first_comment = false
+      end # article.comments.each do |comment|
+    end # @updated_articles[topic.permalink].each do |article|
+  end # if @updated_articles[topic.permalink].size > 0
+end # @topics.each do |topic|
+%>
+
+
+---------------------------------------
+<%= @unsubscribe_text %>
+
+    <%= @unsubscribe_link %>
+
+<%= @unsubscribe_instructions %>

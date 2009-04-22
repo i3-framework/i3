@@ -1,0 +1,20 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<body style="font-family:sans-serif;">
+  <p><% if @is_new_article %><%= @article.text.gsub(/\n/, "<br>") %><% else %><%= @article.comments.last.text.gsub(/\n/, "<br>") %><% end %></p>
+  
+  <hr style="margin-top: 20px;">
+  To view this post, please visit:  <a href="<%= @article_link %>"><%= @article_link %></a>
+  <hr>
+  
+  <div style="color:#666666;font-size:9px;">
+    <p><%= @unsubscribe_text %></p>
+    <p style="padding-left:20px;">
+      <a href="<%= @unsubscribe_link %>">
+        <%= @unsubscribe_link %>
+      </a>
+    </p>
+    <p><%= @unsubscribe_instructions %></p>
+  </div>
+</body>
+</html>

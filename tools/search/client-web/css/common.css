@@ -1,0 +1,110 @@
+/**
+ * Stylesheet: search/client-web/css/common
+ *
+ * CSS file for the Search the Intranet tool.
+ *
+ * Credits:
+ * 
+ *   Written by Nathan Mellis.
+ * 
+ * Copyright / License:
+ * 
+ *   Copyright 2009 Mission Aviation Fellowship
+ * 
+ *   Licensed under the Apache License, Version 2.0 (the "License");
+ *   you may not use this file except in compliance with the License.
+ *   You may obtain a copy of the License at
+ * 
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ *   Unless required by applicable law or agreed to in writing, software
+ *   distributed under the License is distributed on an "AS IS" BASIS,
+ *   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *   See the License for the specific language governing permissions and
+ *   limitations under the License.
+ *
+ * Version:
+ *   $Id: common.css 87 2008-04-09 22:18:26Z nmellis $
+ */
+
+#search-searchBoxContainer {
+  padding: 8px;
+  background-color: #E8E8E8;
+  border: 1px dashed #C0C0C0;
+  margin-bottom: 10px;
+}
+
+#search-showHideOptionsLink {
+  margin-left: 8px;
+}
+#search-searchOptions {
+  border-top: 1px dashed #C0C0C0;
+  padding-top: 8px;
+  margin-top: 8px;
+}
+#search-searchResults {
+  width: 100%;
+}
+
+.search .searchResultsSection {
+  margin-bottom: 10px;
+  border: 1px solid #C0C0C0;
+}
+.search .resultToolHeader {
+  border-top: 1px solid #C0C0C0;
+  background: #F8F8F8;
+}
+.search .resultToolHeader table {
+  width: 100%;
+}
+.search .resultToolHeaderIcon {
+  padding: 4px;
+  width: 32px;
+}
+.search .resultToolHeaderText {
+  padding-left: 8px;
+}
+.search .resultToolHeaderText strong {
+  font-size: 16px;
+}
+.search .resultToolHeaderText strong a {
+  color: #333333;
+  text-decoration: none;
+}
+.search .resultToolHeaderText strong a:hover {
+  text-decoration: underline;
+}
+.search .resultToolHeaderCount {
+  color: #666666;
+  font-style: italic;
+  margin-left: 12px;
+}
+
+.search .searchResults {
+  
+}
+.search .searchResults table {
+  width: 100%;
+}
+.search .searchResultIcon {
+  width: 20px;
+}
+.search .searchResultInfo {
+  overflow: hidden;
+}
+.search .searchResultLink {
+  
+}
+.search .searchResultDescription {
+  color: #666666;
+  overflow: hidden;
+}
+.search .searchResultLastModifiedAt {
+  text-align: right;
+  white-space: nowrap;
+}
+.search .searchResultsViewAdditional {
+  margin-top: 8px;
+  padding: 8px;
+  background-color: #F8F8F8;
+}

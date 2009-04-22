@@ -1,0 +1,74 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+  "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <link rel="stylesheet" type="text/css" href="/admin/client-web/css/common.css" />
+  <script type="text/javascript" src="/common/client-web/js/tabs.js"></script>
+  <script type="text/javascript" src="/common/client-web/js/tables.js"></script>
+  <script type="text/javascript" src="/common/client-web/js/directory-browser.js"></script>
+  <script type="text/javascript" src="/admin/client-web/js/index.js"></script>
+  <title>Intranet Administration</title>
+</head>
+
+<body>
+  <h2><span id="appletTitle">Intranet Administration</span></h2>
+  <div id="appletContent"><div class="admin">
+    
+    <!-- Introductory text -->
+    <div id="admin-introSection">
+      <h4>Permission Assignment</h4>
+      <p>
+        Each tool on the intranet has a set of <strong>privileges</strong>
+        that can be assigned.
+      </p>
+      <ul>
+        <li> Privileges determine what a user or group can do with a
+             tool. </li>
+        <li> Each tool defines its own set of privileges that it will
+             use. </li>
+        <li> All tools have an <strong>access-tool</strong> privilege that
+             determines who can use the tool in the first place. </li>
+        <li> Privileges should almost always be assigned at the
+             <strong>group</strong> level. </li>
+      </ul>
+    </div>
+    
+    <!-- List of tools/privileges -->
+    <div id="admin-privilegeListSection">
+      <table>
+        <tr>
+          <th>Tool:</th>
+          <th>Privilege:</th>
+        </tr>
+        <tr>
+          <td id="admin-toolListCell">
+            <div id="admin-toolListContainer" class="adminTableContainer"></div>
+          </td>
+          <td id="privilegeListCell">
+            <div id="admin-privilegeListContainer" class="adminTableContainer"></div>
+          </td>
+        </tr>
+      </table>
+    </div>
+    
+    <!-- User/group assignments -->
+    <h4 id="admin-assigneeHeader"></h4>
+    <div id="admin-assigneeSection">
+
+      <!-- Container for existing users/groups -->
+      <div>
+        <div id="admin-assigneeExistingContainer" class="adminTableContainer"></div>
+        <input id="admin-addUserGroupButton" type="button" value="Add Group/User..." />
+      </div>
+      
+      <!-- Container for the Directory Browser -->
+      <div id="admin-directoryBrowserContainer" style="display:none;width:800px;"></div>
+
+    </div>
+
+  </div></div>
+</body>
+
+</html>

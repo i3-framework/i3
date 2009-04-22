@@ -1,0 +1,43 @@
+# ============================================================================
+# Intranet Server Configuration
+# ============================================================================
+
+#
+# Title and organization to be sent to the client.
+#
+title: Company Intranet
+organization: Your Company
+
+#
+# Theme to use for the intranet.
+#
+theme: default
+
+#
+# Level of detail to be written to the log file.
+#
+# Recognized values are "debug", "info", "warn", "error", and "fatal".
+#
+log_level: debug
+
+#
+# Items to display in the client navigation bar.
+#
+# - The "Home" item will always appear to the far left.
+# - The "required" section is for icons that are displayed to the left of
+#   the divider, next to the Home item, and cannot be removed by the user.
+# - The "default" section is for icons that are added automatically to the
+#   right of the divider and can be removed/replaced by the user.
+# - The "tool" setting is required for each item; optional settings include
+#   "path", "icon", and "caption".  See <common/data/user-info> for details.
+#
+navbar_items:
+    required:
+        - tool: tools
+        - tool: documents
+        - tool: contacts
+    default:
+        - tool: bboard
+        - tool: devworld
+          caption: Developer
+

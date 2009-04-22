@@ -1,0 +1,93 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+  "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <link rel="stylesheet" type="text/css" href="/devworld/client-web/css/common.css" />
+  <script type="text/javascript" src="/devworld/client-web/js/index.js"></script>
+  <title>Developer World</title>
+</head>
+
+<body>
+  <div id="appletContent">
+    <div class="devworld">
+    
+      <h3>Welcome to Developer World</h3>
+      <p>
+        This tool provides a way of testing the output of web services.
+        It loads the service and places the results in the box below.
+        Just select a service, provide it with some extra path data (if
+        applicable), and go!
+      </p>
+    
+      <h4>Request</h4>
+    
+      <div id="devworld-serviceConfigContainer">
+        <div id="devworld-serviceListContainer">
+          <table>
+            <tr><th>Choose a Tool:</th><th>Choose a Servlet:</th></tr>
+            <tr>
+              <td>
+                <select id="devworld-toolList" name="tool" size="6">
+                  <option value="__loading">Loading...</option>
+                </select>
+              </td>
+              <td>
+                <select id="devworld-serviceList" name="servlet" size="6"></select>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div id="devworld-serviceMethodContainer">
+          <span id="sdevworld-erviceMethodLabel">HTTP Method:</span>
+          <select id="devworld-methodList" name="method">
+            <option value="GET">GET</option>
+            <option value="PUT">PUT</option>
+            <option value="POST">POST</option>
+            <option value="DELETE">DELETE</option>
+          </select>
+        </div>
+        <div id="devworld-serviceParamsContainer">
+          <span id="devworld-serviceParamsLabel">Additional URL parameters:</span>
+          <br />
+          <input id="devworld-serviceParamsInput" name="params" />
+        </div>
+        <div id="devworld-serviceURIPreviewContainer">
+          <span id="devworld-serviceURILabel">Preview:</span>
+          <span id="devworld-serviceMethodPreview">GET</span>
+          <span id="devworld-serviceURIPreview">/</span>
+        </div>
+        <div id="devworld-serviceButtonContainer">
+          <input id="devworld-serviceButton" type="button" name="go" value="Go!" />
+        </div>
+      </div>
+    
+      <div id="devworld-servicePostContainer">
+        <h5>POST data:</h5>
+        <textarea id="devworld-servicePostText"></textarea>
+      </div>
+    
+      <div class="clear">&nbsp;</div>
+    
+      <h4>Result</h4>
+
+      <div id="devworld-serviceResultContainer">
+        <div id="devworld-serviceLoading">
+          Loading...
+          <img src="/$theme/client-web/img/working.gif" />
+        </div>
+        <div id="devworld-serviceResults">
+          <div id="devworld-resultHeaders"></div>
+          <div id="devworld-resultViewOptions"></div>
+          <div id="devworld-resultView"></div>
+        </div>
+        <div id="devworld-serviceError"></div>
+      </div>
+    
+    </div>
+  </div>
+
+</body>
+
+</html>

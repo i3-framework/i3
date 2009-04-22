@@ -1,0 +1,96 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+  "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <link rel="stylesheet" type="text/css" href="/bboard/client-web/css/common.css" />
+  <link rel="stylesheet" type="text/css" href="/bboard/client-web/css/subscriptions.css" />
+  <script type="text/javascript" src="/bboard/client-web/js/subscriptions.js"></script>
+  <title>Bulletin Board - Subscriptions</title>
+</head>
+
+<body>
+  <div id="appletContent"><div class="bboard">
+    
+    <div id="bboard-loadingSubscriptions">
+      Loading Subscriptions... <img src="/$theme/client-web/img/working.gif" />
+    </div>
+    
+    <div id="bboard-subscriptions" style="display:none;">
+      
+      <div id="bboard-subscription-preferences">
+        <h3>Preferences</h3>
+
+        <h4>I prefer to receive:</h4>
+        <ul id="bboard-prefers-format-list">
+          <li>
+            <label>
+              <input type="radio" name="email_format" value="html" 
+                     id="bboard-prefers-html" checked />
+              HTML email
+            </label>
+          </li>
+          <li>
+            <label>
+              <input type="radio" name="email_format" value="plain" 
+                     id="bboard-prefers-plain" />
+              Plain text email
+            </label>
+          </li>
+        </ul>
+      
+        <h4>Frequency:</h4>
+        <ul id="bboard-prefers-frequency-list">
+          <li>
+            <label>
+              <input type="radio" name="email_frequency" value="every_post" 
+                     id="bboard-prefers-every_post" checked />
+              Every post
+            </label>
+          </li>
+          <li>
+            <label>
+              <input type="radio" name="email_frequency" value="daily_digest" 
+                     id="bboard-prefers-daily_digest" />
+              Daily digest
+            </label>
+          </li>
+        </ul>
+      </div>
+      
+      <div id="bboard-my-subscriptions">
+      
+        <h3>My Subscriptions</h3>
+      
+        <h4>Topics</h4>
+        <div id="bboard-my-subscriptions-topics">
+          <div id="bboard-subscriptionTopicList"></div>
+        </div>
+      
+        <h4>Posts</h4>
+        <div id="bboard-my-subscriptions-posts">
+          <div id="bboard-subscriptionPostList"></div>
+        </div>
+      </div>
+      
+      <div style="clear:both;"></div>
+      
+      <div class="actionContainer">
+        <div id="bboard-saveSubscriptionsInstructions">
+          Click "Save Changes" when finished.
+        </div>
+        <div id="bboard-saveSubscriptionsStatus">
+          Saving changes...
+          <img src="/$theme/client-web/img/working.gif" />
+        </div>
+        <div id="bboard-saveSubscriptionsError"></div>
+        <div id="bboard-saveSubscriptionsButtons">
+          <input type="button" id="bboard-saveSubscriptionChanges" value="Save Changes" />
+        </div>
+      </div>
+    </div>
+  </div></div>
+</body>
+
+</html>

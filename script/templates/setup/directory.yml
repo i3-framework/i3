@@ -1,0 +1,13 @@
+# ============================================================================
+#  Directory Service provider configuration
+# ============================================================================
+
+provider: active-directory
+host: localhost
+username: CN=intranet,OU=Service Accounts,OU=Accounts,DC=internal,DC=mycompany,DC=com
+password: password
+settings:
+  search_paths:
+    - OU=Accounts,DC=internal,DC=mycompany,DC=com
+    - OU=Groups,DC=internal,DC=mycompany,DC=com
+    - CN=External,OU=Mailbox Account,DC=internal,DC=mycompany,DC=com

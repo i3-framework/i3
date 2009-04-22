@@ -1,0 +1,89 @@
+/**
+ * Script: <%= applet_path %>
+ *
+ * Place an overview of what the applet does here.
+ *
+ * Credits:
+ * 
+ *   Written by <%= credit %>.
+ * 
+ * Copyright / License:
+ * 
+ *   <%= copyright %>
+ * 
+ *   Licensed under the Apache License, Version 2.0 (the "License");
+ *   you may not use this file except in compliance with the License.
+ *   You may obtain a copy of the License at
+ * 
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ *   Unless required by applicable law or agreed to in writing, software
+ *   distributed under the License is distributed on an "AS IS" BASIS,
+ *   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *   See the License for the specific language governing permissions and
+ *   limitations under the License.
+ *
+ * Version:
+ *   <%= version %>
+ */
+
+// ---------------------------------------------------------------------------
+
+/**
+ * Module: <%= module_name %>
+ *
+ * The module containing all <%= tool_name %> classes and data.
+ */
+@module <%= module_name %>;
+
+// ---------------------------------------------------------------------------
+
+/**
+ * Class: <%= module_name %>.<%= applet_class_name %>
+ *
+ * Place a brief description of how the applet works here.
+ */
+@class <%= applet_class_name %> {
+
+  /**
+   * Method: initialize
+   *
+   * Initializes the <%= applet_title %> applet.
+   */
+  @method initialize() {
+    // Set up any instance variables here.
+  }
+
+  /**
+   * Method: loadPath
+   *
+   * Loads the data for the given path.
+   *
+   * Parameters:
+   *   path - the path to load
+   */
+  @method loadPath(path) {
+
+    // Add this tool's entry to the navigation bar.
+    <%= navbar_code %>
+
+    // Display some text.
+    self.addText("Welcome to the <%= tool_name %> tool.");
+  }
+
+  /**
+   * Method: addText
+   *
+   * Appends text to the applet content.  This is just a sample method that
+   * you are free to remove and/or replace with your own methods.
+   *
+   * Parameters:
+   *   theText - the string to display on the page
+   */
+  @method addText(theText) {
+    var textPara = I3.ui.create("p");
+    textPara.appendChild(I3.ui.text(theText));
+    I3.ui.get("appletContent").appendChild(textPara);
+  }
+
+} // end <%= module_name %>.<%= applet_class_name %>

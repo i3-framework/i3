@@ -1,0 +1,79 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+  "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <link rel="stylesheet" type="text/css" href="/documents/client-web/css/common.css" />
+  <script type="text/javascript" src="/common/client-web/js/menus.js"></script>
+  <script type="text/javascript" src="/common/client-web/js/tables.js"></script>
+  <script type="text/javascript" src="/common/client-web/js/file-upload.js"></script>
+  <script type="text/javascript" src="/documents/client-web/js/index.js"></script>
+  <title>Documents</title>
+</head>
+
+<body>
+  <div id="appletContent"><div class="documents">
+    
+    <div id="documents-shares-menu"></div>
+    
+    <div class="documents-shares-menu-offset">
+
+      <div id="documents-toolbar">
+        <div id="documents-search">
+          Search documents:
+          <input type="text" id="documents-searchText" name="q" /> 
+          <label>
+            <input type="checkbox" id="documents-onlyin" name="onlyin" />
+            Limit to this folder <span style="color:#888888;">(and subfolders)</span>
+          </label>
+        </div>
+        <div id="documents-view">
+          View:
+          <span id="documents-iconView">Icon</span> |
+          <span id="documents-listView">List</span>
+        </div>
+      </div>
+      
+      <!-- Loading elements -->
+      <div id="documents-loading" class="documents-status" style="display:none">
+        Getting file list...
+        <img src="/$theme/client-web/img/working.gif" />
+      </div>
+      <div id="documents-searching" class="documents-status" style="display:none">
+        Searching documents...
+        <img src="/$theme/client-web/img/working.gif" />
+      </div>
+      
+      <!-- Container to hold file sections -->
+      <div id="documents-fileSectionsContainer" style="display:none;"></div>
+      
+      <!-- Container to hold the file upload form -->
+      <div id="documents-fileUploadContainer" style="display:none;">
+        <div id="documents-fileUploadFormContainer">
+          <form id="documents-fileUploadForm" name="fileUploadForm">
+            File to Upload: <input name="fileToUpload" type="file" />
+          </form>
+        </div>
+        <div id="documents-fileUploadProgressContainer" style="display:none;">
+          Uploading File... <img src="$theme/client-web/img/working.gif" />
+        </div>
+      </div>
+      
+      <div id="documents-fileUploadExistingFileContainer" style="display:none;">
+        <p>
+          The file you are uploading already exists.  Please enter a new filename.
+          <span id="documents-fileUploadOverwriteFileNotice"></span>
+        </p>
+        <p>
+          Save as: <input id="documents-fileUploadNewFilename" />
+        </p>
+      </div>
+      
+      
+    </div>
+    <div style="clear:both;"></div>
+  </div></div>
+</body>
+
+</html>

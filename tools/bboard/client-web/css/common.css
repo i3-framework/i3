@@ -1,0 +1,341 @@
+/**
+ * Stylesheet: bboard/client-web/css/common
+ *
+ * CSS file for the Bulletin Board tool.
+ *
+ * Credits:
+ * 
+ *   Written by Marshall Elfstrand (marshall@vengefulcow.com).
+ * 
+ * Copyright / License:
+ * 
+ *   Copyright 2009 Mission Aviation Fellowship
+ * 
+ *   Licensed under the Apache License, Version 2.0 (the "License");
+ *   you may not use this file except in compliance with the License.
+ *   You may obtain a copy of the License at
+ * 
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ *   Unless required by applicable law or agreed to in writing, software
+ *   distributed under the License is distributed on an "AS IS" BASIS,
+ *   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *   See the License for the specific language governing permissions and
+ *   limitations under the License.
+ *
+ * Version:
+ *   $Id: common.css 151 2009-03-20 19:44:10Z nmellis $
+ */
+
+/* Left-side menu */
+#bboard-topicContainer {
+  float: left;
+  width: 160px;
+}
+.bboard-sidebarLink {
+  background: #E0D8D0;
+  border: 1px solid #A09890;
+  margin-top: 8px;
+  padding: 8px;
+}
+.bboard-sidebarLink a {
+  color: #504840;
+}
+#bboard-manageSubscriptionsLink {
+  margin-top: 8px;
+}
+
+/* Main content area */
+#bbContentMain {
+  margin-left: 168px;
+}
+#bbIntro h3 {
+  margin: 0px;
+  padding: 4px;
+}
+#bbLoading, #bbTopic, #bbPosts, #bbSinglePost {
+  display: none;
+}
+
+/* Topic name at top of content area */
+#bbTopic {
+  border-bottom: 1px solid #C0C0C0;
+  margin: 0px;
+  padding-bottom: 8px;
+}
+#bbTopicName {
+  color: #404040;
+  font-weight: normal;
+  font-size: 16px;
+  padding-right: 8px;
+}
+#bbTopicDescription {
+  margin-top: 8px;
+  font-style: italic;
+  color: #666666;
+}
+#bbTopicLinkContainer, #bbSubscribeToTopicLinkContainer {
+  color: #808080;
+  font-size: 10px;
+}
+#bbTopicLink a, #bbSubscribeToTopicLink a {
+  color: #404080;
+}
+
+/* List of posts in a topic */
+#bbPostListInfo {
+  background: #D0E0F0;
+  color: #506070;
+  font-style: italic;
+  margin-top: 4px;
+  margin-bottom: 4px;
+  padding: 8px;
+}
+.bbPostListItem {
+  border-top: 1px solid #E0E0E0;
+}
+.bbPostListItem h4 {
+  font-size: 1em;
+  font-weight: bold;
+  margin-top: 4px;
+  margin-bottom: 0px;
+}
+.bbPostListItem a {
+  color: #000040;
+}
+.bbPostListItem a:hover {
+  color: #0000FF;
+}
+.bbPostListItem p {
+  color: #404040;
+  margin: 4px;
+}
+#bbPostListCompose {
+  float: right;
+  margin: 0px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-right: 3px;
+}
+#bbPostListCompose a {
+  background: #DFEFFF;
+  border: 1px solid #B0C0D0;
+  color: #204060;
+  padding: 4px;
+}
+#bbPostListCompose a:hover {
+  border: 1px solid #004080;
+  color: #000080;
+}
+
+/* New post composition */
+#bbCompose {
+  border: 1px solid #A0B0D0;
+  margin-top: 16px;
+  padding: 4px;
+  width: 408px;
+  display: none;
+}
+#bbCompose h4 {
+  background: #C0D0F0;
+  color: #607090;
+  font-weight: bold;
+  margin: 0px;
+  padding: 4px;
+}
+#bbComposeHeaders {
+  color: #808080;
+  padding: 4px;
+}
+#bbComposeHeaders div {
+  margin-top: 4px;
+}
+#bbComposeAuthorLabel {
+  color: #000000;
+  padding-left: 4px;
+}
+#bbComposeSubjectText {
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  width: 300px;
+}
+#bbComposeEntry {
+  padding: 0px 4px 4px 4px;
+}
+#bbComposeBodyText {
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  width: 400px;
+  height: 200px;
+}
+#bbComposeFooter {
+  width: 400px;
+}
+#bbComposeStatusLabel {
+  color: #808080;
+}
+#bbComposeButtons {
+  float: right;
+}
+
+/* Individual post */
+#bbPostFirst {
+  background: #F0FFF8;
+  border-left: 1px solid #E0E8E4;
+  border-right: 1px solid #E0E8E4;
+  border-bottom: 1px solid #E0E8E4;
+  margin-bottom: 8px;
+}
+#bbPostFirst h5 {
+  background: #E8F0EC;
+}
+#bbPostContent {
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-bottom: 8px;
+}
+
+/* Comments on post */
+#bbPostComments h5 {
+  background: #F0F0F0;
+  border-top: 1px solid #C0C0C0;
+}
+.bbPostComment {
+  padding-top: 12px;
+}
+.bbPostComment div {
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-bottom: 8px;
+}
+
+/* Byline for post and comments */
+#bbSinglePost h5 {
+  color: #808080;
+  font-size: 10px;
+  font-weight: normal;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  padding: 4px;
+}
+#bbSinglePost h5 a {
+  color: #606080;
+}
+#bbSinglePost h5 a:hover {
+  color: #202080;
+}
+#bbSinglePost h5 .bboard-editLink {
+  color: #B0C0B8;
+  float: right;
+  padding: 0px;
+}
+#bbSinglePost h5 .bboard-editLink a {
+  color: #B0C0B8;
+}
+#bbSinglePost h5 .bboard-editLink a:hover {
+  color: #000080;
+}
+
+/* Text for post and comments */
+#bbSinglePost p {
+  margin-top: 8px;
+  margin-bottom: 0px;
+}
+
+/* Add comment area */
+#bbAddComment {
+  border: 1px solid #A0D0A0;
+  margin-top: 16px;
+  padding: 4px;
+  width: 408px;
+}
+#bbAddComment h4 {
+  background: #C0F0C0;
+  color: #609060;
+  font-weight: bold;
+  font-size: 12px;
+  margin: 0px;
+  padding: 4px;
+}
+#bbAddCommentHeaders {
+  color: #808080;
+  padding: 4px;
+}
+#bbAddCommentHeaders div {
+  margin-top: 3px;
+}
+#bbAddCommentAuthorLabel {
+  color: #000000;
+  padding-left: 4px;
+}
+#bbAddCommentSubjectLabel {
+  color: #000000;
+  padding-left: 4px;
+}
+#bbAddCommentEntry {
+  padding: 0px 4px 4px 4px;
+}
+#bbAddCommentText {
+  border: 1px solid #808080;
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  padding: 4px;
+  width: 388px;
+  height: 100px;
+}
+#bbAddCommentButtons {
+  width: 400px;
+}
+#bbAddCommentStatusLabel {
+  color: #808080;
+}
+#bbAddCommentButton {
+  float: right;
+}
+
+/* Edit dialog for post and comments */
+#bboard-editPopup {
+  padding: 4px 4px 0px 4px;
+}
+#bboard-editHeaders {
+  color: #808080;
+  padding: 4px;
+}
+#bboard-editHeaders div {
+  margin-top: 4px;
+}
+#bboard-editAuthorLabel {
+  color: #000000;
+  padding-left: 4px;
+}
+#bboard-editSubjectText {
+  border: 1px solid #808080;
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  margin-left: 4px;
+  padding: 2px;
+  width: 300px;
+}
+#bboard-editEntry {
+  padding: 0px 4px 4px 4px;
+}
+#bboard-editBodyText {
+  border: 1px solid #808080;
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  padding: 4px;
+  width: 472px;
+  height: 200px;
+}
+#bboard-editStatus {
+  color: #808080;
+  float: left;
+  padding: 8px;
+  margin-bottom: 0px;
+}
+
+/* Pushes bottom of content area below all floats */
+.bboardClear {
+  clear: both;
+  height: 1px;
+}

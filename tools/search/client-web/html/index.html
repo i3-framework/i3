@@ -1,0 +1,43 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+  "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <link rel="stylesheet" type="text/css" href="/search/client-web/css/common.css" />
+  <!-- Place additional CSS/JS links here. -->
+  <script type="text/javascript" src="/search/client-web/js/index.js"></script>
+  <title>Search the Intranet</title>
+</head>
+
+<body>
+  <div id="appletContent"><div class="search">
+    
+    <!-- Search Box -->
+    <div id="search-searchBoxContainer">
+      <div class="searchTerms">
+        Search the Intranet: 
+        <input id="search-searchTerms" /> 
+        <input id="search-searchButton" type="button" value="Search" /> 
+        <span id="search-showHideOptionsLink"></span>
+      </div>
+      <div id="search-searchOptions" style="display:none;">
+        <em>Include results from the following tools:</em>
+        <table>
+          <tbody id="search-searchableTools"></tbody>
+        </table>
+      </div>
+    </div>
+    
+    <!-- Loading Message -->
+    <div id="search-loadingSearchResults" style="display:none;">
+      Loading Search Results... <img src="/$theme/client-web/img/working.gif" />
+    </div>
+    
+    <!-- Search Results -->
+    <div id="search-searchResults" style="display:none;"></div>
+    
+  </div></div>
+</body>
+
+</html>

@@ -1,0 +1,88 @@
+/**
+ * Stylesheet: bboard/client-web/css/subscriptions
+ *
+ * CSS file for the Bulletin Board tool subscriptions page.
+ *
+ * Credits:
+ * 
+ *   Written by Nathan Mellis (nathan@mellis.us).
+ * 
+ * Copyright / License:
+ * 
+ *   Copyright 2009 Mission Aviation Fellowship
+ * 
+ *   Licensed under the Apache License, Version 2.0 (the "License");
+ *   you may not use this file except in compliance with the License.
+ *   You may obtain a copy of the License at
+ * 
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ *   Unless required by applicable law or agreed to in writing, software
+ *   distributed under the License is distributed on an "AS IS" BASIS,
+ *   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *   See the License for the specific language governing permissions and
+ *   limitations under the License.
+ *
+ * Version:
+ *   $Id: subscriptions.css 109 2008-05-19 15:45:55Z nmellis $
+ */
+
+
+.bboard #bboard-subscription-preferences {
+  float: right;
+  width: 250px;
+  background: #FFFFCC;
+  border: 1px solid #996600;
+  padding: 8px;
+}
+.bboard #bboard-subscription-preferences h3, 
+.bboard #bboard-subscription-preferences h4 {
+  color: #996600;
+  margin-top: 2px;
+}
+.bboard #bboard-subscriptions ul {
+  list-style: none;
+  padding-left: 10px;
+}
+
+
+.bboard #bboard-my-subscriptions {
+  margin-right: 260px;
+}
+.bboard #bboard-my-subscriptions h3 {
+  font-size: 18px;
+  margin-top: 0px;
+}
+
+.bboard .postTopicName {
+  color: #666666;
+  font-size: 9px;
+}
+
+.bboard .actionContainer {
+  background: #F0E0E0;
+  border: 1px solid #B0A0A0;
+  margin-top: 10px;
+  padding: 5px;
+  text-align: right;
+}
+#bboard-saveSubscriptionsInstructions, 
+#bboard-saveSubscriptionsStatus, 
+#bboard-saveSubscriptionsError {
+  float: left;
+  font-size: 11px;
+  padding-left: 4px;
+}
+#bboard-saveSubscriptionsInstructions {
+  color: #908080;
+  padding-top: 4px;
+}
+#bboard-saveSubscriptionsStatus {
+  color: #908080;
+  display: none;
+}
+#bboard-saveSubscriptionsError {
+  color: #800000;
+  display: none;
+  padding-top: 4px;
+}

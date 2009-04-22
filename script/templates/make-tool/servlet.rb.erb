@@ -1,0 +1,58 @@
+#
+# Web Service: <%= servlet_path %>
+#
+# Place a description for your web service here.
+#
+# Credits:
+# 
+#   Written by <%= credit %>.
+# 
+# Copyright / License:
+# 
+#   <%= copyright %>
+# 
+#   Licensed under the Apache License, Version 2.0 (the "License");
+#   you may not use this file except in compliance with the License.
+#   You may obtain a copy of the License at
+# 
+#     http://www.apache.org/licenses/LICENSE-2.0
+# 
+#   Unless required by applicable law or agreed to in writing, software
+#   distributed under the License is distributed on an "AS IS" BASIS,
+#   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+#   See the License for the specific language governing permissions and
+#   limitations under the License.
+#
+# Version:
+#   <%= version %>
+#
+
+#
+# Module: <%= module_name %>
+#
+# The module containing all <%= tool_name %> classes and data.
+#
+module <%= module_name %>
+
+  #
+  # Class: <%= module_name %>::<%= servlet_class_name %>
+  #
+  # The main servlet for the <%= servlet_title %> service.
+  #
+  class <%= servlet_class_name %> < I3::Servlet
+
+    #
+    # Method: on_get
+    #
+    # Returns a greeting.
+    #
+    # Parameters:
+    #   path - additional path data provided in the URI
+    #
+    def on_get(path)
+      I3.server.send_object("Hello world!")
+    end #on_get
+
+  end #class <%= servlet_class_name %>
+
+end #module <%= module_name %>

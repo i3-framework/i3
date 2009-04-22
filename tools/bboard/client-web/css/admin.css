@@ -1,0 +1,255 @@
+/**
+ * Stylesheet: bboard/client-web/css/admin
+ *
+ * CSS file for the Bulletin Board administration applet.
+ *
+ * Credits:
+ * 
+ *   Written by Marshall Elfstrand (marshall@vengefulcow.com).
+ * 
+ * Copyright / License:
+ * 
+ *   Copyright 2009 Mission Aviation Fellowship
+ * 
+ *   Licensed under the Apache License, Version 2.0 (the "License");
+ *   you may not use this file except in compliance with the License.
+ *   You may obtain a copy of the License at
+ * 
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ *   Unless required by applicable law or agreed to in writing, software
+ *   distributed under the License is distributed on an "AS IS" BASIS,
+ *   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *   See the License for the specific language governing permissions and
+ *   limitations under the License.
+ *
+ * Version:
+ *   $Id: admin.css 75 2008-04-02 19:33:48Z nmellis $
+ */
+
+/* Common table rendering styles */
+.bboard-adminTableContainer {
+  border: 1px solid #C0C0C0;
+  overflow: auto;
+}
+.bboard-adminTableContainer table {
+  border-collapse: collapse;
+  table-layout: fixed;
+  width: 100%;
+}
+.bboard-adminTableContainer table td {
+  cursor: default;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+/* Topic Menu */
+#bboard-adminTopicContainer {
+  float: left;
+  width: 160px;
+}
+.bboard-adminMenuTitle {
+  background-color: #404040;
+}
+.bboard-adminMenuSelection {
+  background-color: #808080;
+}
+#bboard-adminTopicsLoading {
+  background: #E0E0E0;
+  border: 1px solid #C0C0C0;
+  color: #808080;
+  padding: 4px;
+  text-align: center;
+}
+#bboard-adminTopicButtons {
+  border-left: 1px solid #C0C0C0;
+  border-right: 1px solid #C0C0C0;
+  border-bottom: 1px solid #C0C0C0;
+  background: #C0C0C0;
+  height: 24px;
+}
+.bboard-adminTopicButton {
+  border-right: 2px solid #A0A0A0;
+  color: #444444;
+  cursor: pointer;
+  float: left;
+  font-size: 12px;
+  font-weight: bold;
+  padding-top: 4px;
+  padding-bottom: 6px;
+  text-align: center;
+  text-decoration: none;
+  width: 30px;
+}
+#bboard-adminTopicButtonLabel {
+  color: #C0C0C0;
+  font-size: 10px;
+  padding: 4px 8px 8px 8px;
+}
+
+/* Add Topic Pop-up */
+#bboard-adminAddTopicPopup {
+  width: 500px;
+}
+#bboard-adminAddTopicPopup table {
+  margin: 8px;
+}
+#bboard-adminAddTopicPopup td {
+  padding: 4px;
+}
+#bboard-adminAddTopicPopup td:first-child {
+  color: #404040;
+  font-weight: bold;
+  font-size: 10px;
+  text-align: right;
+}
+#bboard-adminAddTopicPopup td strong {
+  color: #404040;
+  font-weight: bold;
+  font-size: 10px;
+}
+#bboard-adminNewTopicName {
+  width: 200px;
+}
+#bboard-adminNewTopicDescription {
+  width: 396px;
+}
+#bboard-adminNewTopicButtons {
+  margin: 8px;
+  text-align: right;
+}
+#bboard-adminNewTopicButtons input {
+  margin-left: 8px;
+}
+
+/* Remove Topic Pop-up */
+#bboard-adminConfirmationPopup {
+  padding: 0px 8px 8px 8px;
+}
+#bboard-adminConfirmationPopup p {
+  color: #606060;
+}
+#bboard-adminConfirmationPopup strong {
+  color: #000000;
+}
+
+/* Introduction section */
+#bboard-adminIntroSection {
+  background: #FFE8DF;
+  border: 1px solid #A08880;
+  margin-bottom: 8px;
+  padding: 0px 0px 4px 0px;
+}
+#bboard-adminIntroSection h4 {
+  background: #E0C8C0;
+  color: #503830;
+  margin: 0px 0px 4px 0px;
+  padding: 4px;
+  padding: 4px 8px 4px 8px;
+}
+#bboard-adminIntroSection p {
+  margin: 0px;
+  padding: 4px 8px 4px 8px;
+}
+#bboard-adminIntroSection ul {
+  margin-top: 4px;
+  margin-bottom: 8px;
+  padding-left: 24px;
+}
+#bboard-adminIntroSection b {
+  color: #503030;
+}
+
+/* Main content area */
+#bboard-adminContent {
+  margin-left: 168px;
+}
+.bboard-adminCaption {
+  color: #484848;
+  font-weight: bold;
+  font-size: 10px;
+  margin-bottom: 4px;
+}
+#bboard-adminTopicInfoFields {
+  background-color: #D0D8E0;
+  border: 1px solid #808890;
+  padding: 8px;
+  margin-bottom: 8px;
+}
+#bboard-adminTopicInfoFields td {
+  padding: 4px;
+}
+#bboard-adminTopicInfoFields td:first-child {
+  color: #404850;
+  font-weight: bold;
+  font-size: 10px;
+  text-align: right;
+}
+#bboard-adminTopicName {
+  width: 200px;
+}
+#bboard-adminTopicDescription {
+  width: 400px;
+}
+#bboard-adminRevertButton {
+  margin-top: 4px;
+}
+#bboard-adminSaveButton {
+  margin-top: 4px;
+  margin-left: 4px;
+}
+#bboard-adminPrivilegeFooter {
+  margin-top: 8px;
+}
+#bboard-adminPrivilegeFooter table {
+  width: 100%;
+}
+#bboard-adminSaving {
+  color: #807060;
+  vertical-align: middle;
+}
+#bboard-adminPrivilegeButtons {
+  text-align: right;
+}
+
+/* Permission table cells */
+#bboard-adminPrivilegeTable .i3tableRowAlt {
+  background: #F0F4F8;
+}
+.bboard-permissionIconColumn {
+  padding: 4px;
+  width: 24px;
+}
+.bboard-permissionNameColumn {
+  border-right: 1px solid #E0E0E0;
+  width: 100%;
+}
+.bboard-permissionCheckboxColumn {
+  border-right: 1px solid #E0E0E0;
+  padding-right: 8px;
+  white-space: nowrap;
+}
+.bboard-permissionRemoveColumn {
+  color: #808080;
+  font-size: 10px;
+  padding-top: 4px;
+  padding-left: 8px;
+  padding-right: 8px;
+  text-align: center;
+}
+.bboard-permissionCellPublic {
+  color: #808080;
+  font-style: italic;
+}
+
+/* Popup box for group/user list */
+#bboard-adminUserPopup {
+  padding-top: 4px;
+  width: 600px;
+}
+
+/* Pushes bottom of content area below all floats */
+.bboard-clear {
+  clear: both;
+  height: 1px;
+}

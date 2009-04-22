@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN"
+          "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>Label</key>
+  <string>org.maf.intranet.load-balancer</string>
+  <key>ProgramArguments</key>
+  <array>
+    <string>/usr/bin/ruby</string>
+    <string>/Library/WebServer/i3/script/server/i3-load-balancer.rb</string>
+  </array>
+  <key>StandardOutPath</key>
+  <string>/var/log/launchd.out</string>
+  <key>StandardErrorPath</key>
+  <string>/var/log/launchd.err</string>
+  <key>UserName</key>
+  <string>_www</string>
+  <key>GroupName</key>
+  <string>_www</string>
+  <key>RunAtLoad</key>
+  <true/>
+  <key>KeepAlive</key>
+  <true/>
+  <key>Umask</key>
+  <integer>0002</integer>
+</dict>
+</plist>

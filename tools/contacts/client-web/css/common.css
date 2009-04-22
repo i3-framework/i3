@@ -1,0 +1,141 @@
+/**
+ * Stylesheet: contacts/css/common
+ *
+ * CSS file for the Contacts tool.
+ *
+ * Credits:
+ *   Written by Marshall Elfstrand (marshall@vengefulcow.com).
+ * 
+ * Copyright / License:
+ * 
+ *   Copyright 2009 Mission Aviation Fellowship
+ * 
+ *   Licensed under the Apache License, Version 2.0 (the "License");
+ *   you may not use this file except in compliance with the License.
+ *   You may obtain a copy of the License at
+ * 
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ *   Unless required by applicable law or agreed to in writing, software
+ *   distributed under the License is distributed on an "AS IS" BASIS,
+ *   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *   See the License for the specific language governing permissions and
+ *   limitations under the License.
+ *
+ * Version:
+ *   $Id: common.css 43 2008-01-07 17:58:02Z nmellis $
+ */
+
+/* Text displayed while summary is loading */
+#contacts-loading {
+  color: #A0A0A0;
+  font-weight: bold;
+}
+
+/* Overridden table styles for "Yellow Pages" look */
+#contacts-tabs .i3tableHead {
+  background: #404040;
+  color: #FFFFFF;
+}
+#contacts-tabs .i3tableHead th {
+  border-top: 1px solid #C0C0C0;
+  border-left: 1px solid #C0C0C0;
+  border-right: 1px solid #000000;
+  border-bottom: 1px solid #000000;
+}
+#contacts-tabs .i3tableHead th.i3tableHeadClicked {
+  background: #202020;
+  border-top: 1px solid #000000;
+  border-left: 1px solid #000000;
+  border-right: 1px solid #B0B0B0;
+  border-bottom: 1px solid #B0B0B0;
+}
+#contacts-tabs .i3tableHead th.i3tableHeadSelected {
+  background: #303030;
+}
+#contacts-tabs .i3tableHeadSelectedArrow {
+  color: #808080;
+}
+#contacts-tabs .i3tableHeadNonSelectedArrow {
+  color: #404040;
+}
+#contacts-tabs .i3tableRow {
+  background: #FFFFC0;
+}
+#contacts-tabs .i3tableRowAlt {
+  background: #FFFF80;
+}
+#contacts-tabs .i3tableRowSelected {
+  background: #404040;
+}
+#contacts-tabs .i3tableRow td {
+  padding: 4px;
+}
+#contacts-tabs .i3tableRowAlt td {
+  padding: 4px;
+}
+
+/* Styles for People tab */
+#contacts-contactsTableContainer .i3tableContainer {
+  float: left;
+  height: 400px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  margin-top: 0px;
+  width: 300px;
+}
+#contacts-contactsTableContainer .i3tableSearch {
+  background-color: #F0F0E8;
+  border: 1px dashed #C0C0A0;
+}
+#contacts-contactsTableContainer td {
+  white-space: nowrap;
+}
+.contacts-contactListLocation {
+  color: #909080;
+}
+#contacts-contactInfoContainer {
+  height: 370px;
+  margin-top: 4px;
+  margin-left: 308px;
+  padding: 16px;
+}
+#contacts-contactInfoInstructions {
+  color: #D0D0C8;
+  font-weight: bold;
+}
+#contacts-contactInfoContainer h4 {
+  font-size: 24px;
+  font-weight: normal;
+  margin: 0px;
+}
+#contacts-contactFieldsLoading {
+  color: #808040;
+  margin: 16px;
+}
+#contacts-contactFields {
+  margin-top: 16px;
+}
+#contacts-contactFields td {
+  vertical-align: top;
+}
+.contacts-contactNickname {
+  color: #404030;
+}
+#contacts-contactSubtitle {
+  color: #808060;
+  margin-top: 4px;
+}
+.contacts-contactLabel {
+  color: #A0A080;
+  font-weight: bold;
+  text-align: right;
+  padding-left: 16px;
+  padding-right: 8px;
+}
+
+/* Style for pushing content below floated elements */
+.contacts-clear {
+  clear: both;
+  height: 1px;
+}

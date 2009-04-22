@@ -1,0 +1,107 @@
+/**
+ * Stylesheet: contacts/css/print
+ *
+ * Printing adjustments for the Contacts tool.
+ *
+ * Credits:
+ *   Written by Marshall Elfstrand (marshall@vengefulcow.com).
+ * 
+ * Copyright / License:
+ * 
+ *   Copyright 2009 Mission Aviation Fellowship
+ * 
+ *   Licensed under the Apache License, Version 2.0 (the "License");
+ *   you may not use this file except in compliance with the License.
+ *   You may obtain a copy of the License at
+ * 
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ *   Unless required by applicable law or agreed to in writing, software
+ *   distributed under the License is distributed on an "AS IS" BASIS,
+ *   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *   See the License for the specific language governing permissions and
+ *   limitations under the License.
+ *
+ * Version:
+ *   $Id: print.css 43 2008-01-07 17:58:02Z nmellis $
+ */
+
+/* Remove tab decorations. */
+#contacts-tabs .i3tabStrip {
+  display: none;
+}
+#contacts-tabs .i3tabPanel {
+  border: none;
+}
+
+/* Adjust table styles for black-and-white printing. */
+#contacts-tabs .i3tableContainer {
+  border: none;
+}
+#contacts-tabs thead {
+  display: table-header-group;
+}
+#contacts-tabs .i3tableHead {
+  background: none;
+  color: #404040;
+}
+#contacts-tabs .i3tableHead th {
+  border: none;
+  border-bottom: 1px solid #000000;
+  padding-left: 8px;
+  padding-bottom: 8px;
+  text-align: left;
+}
+#contacts-tabs .i3tableHead th.i3tableHeadClicked {
+  background: none;
+  border: none;
+}
+#contacts-tabs .i3tableHead th.i3tableHeadSelected {
+  background: none;
+}
+#contacts-tabs .i3tableHeadNonSelectedArrow {
+  color: #C0C0C0;
+}
+#contacts-tabs .i3tableRow {
+  background: none;
+}
+#contacts-tabs .i3tableRowAlt {
+  background: #F0F0F0;
+}
+#contacts-tabs .i3tableRowSelected {
+  background: #C0C0C0;
+}
+
+/* Hide contact list. */
+#contacts-contactsTableContainer {
+  display: none;
+}
+
+/* Adjust contact info so that it is page-wide. */
+#contacts-contactInfoContainer {
+  height: auto;
+  margin: 0pt;
+}
+
+/* Adjust contact labels for black-and-white printing. */
+#contacts-contactInfoInstructions {
+  color: #808080;
+}
+#contacts-contactSubtitle {
+  color: #808080;
+}
+.contacts-contactLabel {
+  color: #808080;
+}
+
+/* Adjust HQ sections for black-and-white printing. */
+#contacts-hq div {
+  border: none;
+}
+#contacts-hq h4 {
+  background: none;
+  color: #000000;
+}
+#contacts-hq div + div {
+  margin-top: 16px;
+}

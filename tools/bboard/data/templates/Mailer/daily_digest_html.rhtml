@@ -1,0 +1,164 @@
+<%
+time_format = "%A, %B %d, %Y %I:%M %p %Z"
+%>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<body style="font-family:sans-serif;">
+  <style>
+  <!--
+  p {
+    padding-left: 8px;
+  }
+  .topicHeader {
+    border-top: 2px solid #704040;
+    background-color: #906060;
+    color: #FFFFFF;
+    padding: 2px;
+  }
+  .topicHeader a {
+    color: #FFFFFF;
+    text-decoration: none;
+  }
+  .topicHeader a:hover {
+    text-decoration: underline;
+  }
+  .articleHeader {
+    
+  }
+  .articleTitle {
+    margin-bottom: 4px;
+  }
+  .messageHeader {
+    background-color: #D0E0F0;
+    padding: 4px;
+    font-size: 10px;
+  }
+  .articleComment {
+    border-top: 1px solid #666666;
+  }
+  .articleComment .messageHeader {
+    background-color: #E8E8E8;
+  }
+  .articleComment.firstComment {
+    border-top: 0px;
+  }
+  -->
+  </style>
+  
+  
+  Summary of activity for <%= @date %>:
+  <ul>
+<% 
+  @topics.sort! { |a,b| a.name <=> b.name }.each do |topic|
+    new_count     = @new_articles[topic.permalink].to_a.size 
+    updated_count = @updated_articles[topic.permalink].to_a.size
+    next if new_count == 0 and updated_count == 0
+%>
+    <li>
+      <a href="#<%= topic.permalink %>"><%= topic.name %></a> - 
+      <%= new_count > 0 ? "#{new_count} new" : "" %>
+      <%= updated_count > 0 ? (new_count > 0 ? ", " : "") + "#{updated_count} updated" : "" %>
+    </li>
+<% end #each %>
+  </ul>
+
+<%
+@topics.each do |topic|
+  permalink_base = "#{@permalink_base}/topics/#{topic.permalink}"
+%>
+  <a name="<%= topic.permalink %>">&nbsp;</a>
+  <h2 class="topicHeader"><a href="<%= permalink_base %>"><%= topic.name %></a></h2>
+<%
+    # Add the new articles
+    if @new_articles[topic.permalink].to_a.size > 0
+      @new_articles[topic.permalink].sort { |a,b| a.posted_at <=> b.posted_at }.each do |article|
+        article_link = permalink_base + 
+          "/#{article.posted_at.year}" + 
+          "/#{article.posted_at.mon.to_s.rjust(2,"0")}" + 
+          "/#{article.posted_at.day.to_s.rjust(2,"0")}" + 
+          "/#{article.permalink}"
+%>
+  <div class="articleHeader">
+    <h3 class="articleTitle">
+      <a href="<%= article_link %>"><%= "#{article.subject} - NEW" %></a>
+    </h3>
+  </div>
+  
+  <div class="messageHeader">
+    From: <%= article.author.full_name %> 
+          &lt;<a href="mailto:<%= article.author.email %>"><%= article.author.email %></a>&gt;
+          <br>
+    Date: <%= article.posted_at.strftime(time_format) %>
+  </div>
+  <p>
+    <%= article.text.gsub(/\n/, "<br>") %>
+  </p>
+  
+  <%    article.comments.each do |comment| %>
+  <div class="articleComment">
+    <div class="messageHeader">
+      From: <%= article.author.full_name %> 
+            &lt;<a href="mailto:<%= article.author.email %>"><%= article.author.email %></a>&gt;
+            <br>
+      Date: <%= comment.posted_at.strftime(time_format) %>
+    </div>
+    <p>
+      <%= comment.text.gsub(/\n/, "<br>") %>
+    </p>
+  </div>
+<%
+        end # article.comments.each do |comment|
+      end # @new_articles[topic.permalink].each
+    end # if @new_articles[topic.permalink].size > 0
+
+    # Now add the updated articles
+    if @updated_articles[topic.permalink].to_a.size > 0
+      @updated_articles[topic.permalink].each do |article|
+        article_link = permalink_base + 
+          "/#{article.posted_at.year}" + 
+          "/#{article.posted_at.mon.to_s.rjust(2,"0")}" + 
+          "/#{article.posted_at.day.to_s.rjust(2,"0")}" + 
+          "/#{article.permalink}"
+%>
+  <div class="articleHeader">
+    <h3 class="articleTitle">
+      <a href="<%= article_link %>"><%= "#{article.subject} - UPDATED" %></a>
+    </h3>
+  </div>
+<%
+        is_first_comment = true
+        article.comments.each do |comment|
+          next unless @date == comment.posted_at.strftime("%Y-%m-%d")
+%>
+  <div class="articleComment<%= is_first_comment ? " firstComment" : "" %>">
+    <div class="messageHeader">
+      From: <%= article.author.full_name %> 
+            &lt;<a href="mailto:<%= article.author.email %>"><%= article.author.email %></a>&gt;
+            <br>
+      Date: <%= comment.posted_at.strftime(time_format) %>
+    </div>
+    <p>
+      <%= comment.text.gsub(/\n/, "<br>") %>
+    </p>
+  </div>
+<%
+          is_first_comment = false
+        end # article.comments.each do |comment|
+      end # @updated_articles[topic.permalink].each do |article|
+    end # if @updated_articles[topic.permalink].size > 0
+  end # @topics.each do |topic|
+%>
+  
+  <hr>
+  
+  <div style="color:#666666;">
+    <p><%= @unsubscribe_text %></p>
+    <p style="padding-left:20px;">
+      <a href="<%= @unsubscribe_link %>">
+        <%= @unsubscribe_link %>
+      </a>
+    </p>
+    <p><%= @unsubscribe_instructions %></p>
+  </div>
+</body>
+</html>

@@ -1,0 +1,165 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+  "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <link rel="stylesheet" type="text/css" href="/bboard/client-web/css/common.css" />
+  <script type="text/javascript" src="/common/client-web/js/menus.js"></script>
+  <script type="text/javascript" src="/bboard/client-web/js/index.js"></script>
+  <title>Bulletin Board</title>
+</head>
+
+<body>
+  <div id="appletContent"><div class="bboard">
+
+    <div id="bboard-topicContainer">
+      <div id="bbLoadingTopics">
+        Loading Topics... <img src="/$theme/client-web/img/working.gif" />
+      </div>
+      <div id="bbTopics"></div>
+      <div id="bboard-adminLink" class="bboard-sidebarLink" style="display:none"></div>
+      <div id="bboard-manageSubscriptionsLink" class="bboard-sidebarLink" style="display:none;"></div>
+    </div>
+    
+    <div id="bbContentMain">
+      
+      <!--
+      ====================================================================
+      Introduction Panel
+      ====================================================================
+      -->
+
+      <div id="bbIntro">
+        <h3>Welcome to the Bulletin Board!</h3>
+        <p>
+          This is the place for news postings and discussions.  Request
+          prayer, discuss relocation, advertise the car you're trying to
+          sell, announce food in the kitchen -- it's all here!
+        </p>
+        <p>
+          Choose a topic from the list on the left to see what has been
+          posted.  Some topics are moderated, but most are open for you
+          to post whatever you like.
+        </p>
+      </div>
+
+      <!--
+      ====================================================================
+      Topic Name and Loading Message
+      ====================================================================
+      -->
+    
+      <div id="bbTopic" style="display:none">
+        <div>
+          <span id="bbTopicName"></span>
+          <span id="bbTopicLinkContainer">
+            [<span id="bbTopicLink"></span>]
+          </span>
+          <span id="bbSubscribeToTopicLinkContainer">
+            [<span id="bbSubscribeToTopicLink">Subscribe</span>]
+          </span>
+        </div>
+        <div id="bbTopicDescription" style="display:none;"></div>
+      </div>
+      
+      <div id="bbLoading" style="display:none">
+        <span id="bbLoadingText">Loading...</span>
+        <img src="/$theme/client-web/img/working.gif" />
+      </div>
+
+      <!--
+      ====================================================================
+      Post List for Topic
+      ====================================================================
+      -->
+    
+      <div id="bbPosts" style="display:none">
+        <p id="bbPostListCompose"></p>
+        <p id="bbPostListInfo"></p>
+        <div id="bbPostList"></div>
+      </div>
+
+      <!--
+      ====================================================================
+      New Message Composition
+      ====================================================================
+      -->
+    
+      <div id="bbCompose" style="display:none">
+        <h4>Post a new message</h4>
+        <div id="bbComposeHeaders">
+          <div>From: <span id="bbComposeAuthorLabel"></span></div>
+          <div>Subject: <input id="bbComposeSubjectText" /></div>
+        </div>
+        <div id="bbComposeEntry">
+          <textarea id="bbComposeBodyText"></textarea>
+        </div>
+        <div id="bbComposeFooter">
+          <span id="bbComposeStatusLabel"></span>
+          <div id="bbComposeButtons">
+            <input type="button" id="bbComposeCancelButton" value="Cancel" />
+            <input type="button" id="bbComposeSubmitButton" value="Submit" />
+          </div>
+        </div>
+        <div class="bboardClear">&nbsp;</div>
+      </div>
+
+      <!--
+      ====================================================================
+      Single Post with Comments
+      ====================================================================
+      -->
+    
+      <div id="bbSinglePost" style="display:none">
+        <div id="bbPostFirst">
+          <h5 id="bbPostByline"></h5>
+          <div id="bbPostContent"></div>
+        </div>
+        <div id="bbPostComments"></div>
+        <div id="bbAddComment">
+          <h4>Add your own reply</h4>
+          <div id="bbAddCommentHeaders">
+            <div>From: <span id="bbAddCommentAuthorLabel"></span></div>
+            <div>Subject: <span id="bbAddCommentSubjectLabel"></span></div>
+          </div>
+          <div id="bbAddCommentEntry">
+            <textarea id="bbAddCommentText"></textarea>
+          </div>
+          <div id="bbAddCommentButtons">
+            <span id="bbAddCommentStatusLabel"></span>
+            <input type="button" id="bbAddCommentButton" value="Submit" />
+          </div>
+          <div class="bboardClear">&nbsp;</div>
+        </div>
+      </div>
+      
+    </div>
+
+    <!--
+    ====================================================================
+    Post/Comment Edit Popup Dialog
+    ====================================================================
+    -->
+
+    <div id="bboard-editPopup" style="display:none">
+      <div id="bboard-editHeaders">
+        <div>From: <span id="bboard-editAuthorLabel"></span></div>
+        <div id="bboard-editSubjectHeader">Subject:
+          <input id="bboard-editSubjectText" />
+        </div>
+      </div>
+      <div id="bboard-editEntry">
+        <textarea id="bboard-editBodyText"></textarea>
+      </div>
+      <div id="bboard-editStatus">
+        Saving... <img src="/$theme/client-web/img/working.gif" />
+        <input id="bboard-editPath" type="hidden" />
+      </div>
+    </div>
+
+    <div class="bboardClear">&nbsp;</div>
+  </div></div>
+</body>
+
+</html>

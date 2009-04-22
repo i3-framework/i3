@@ -1,0 +1,163 @@
+/**
+ * Stylesheet: admin/client-web/css/common
+ *
+ * CSS file for the Intranet Admin tool.
+ *
+ * Credits:
+ * 
+ *   Written by Marshall Elfstrand (marshall@vengefulcow.com).
+ * 
+ * Copyright / License:
+ * 
+ *   Copyright 2009 Mission Aviation Fellowship
+ * 
+ *   Licensed under the Apache License, Version 2.0 (the "License");
+ *   you may not use this file except in compliance with the License.
+ *   You may obtain a copy of the License at
+ * 
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ *   Unless required by applicable law or agreed to in writing, software
+ *   distributed under the License is distributed on an "AS IS" BASIS,
+ *   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *   See the License for the specific language governing permissions and
+ *   limitations under the License.
+ *
+ * Version:
+ *   $Id: common.css 78 2008-04-02 21:53:10Z nmellis $
+ */
+
+/* Introduction section */
+#admin-introSection {
+  background: #FFE8DF;
+  border: 1px solid #A08880;
+  margin-bottom: 8px;
+  padding: 0px 0px 4px 0px;
+}
+#admin-introSection h4 {
+  background: #E0C8C0;
+  color: #503830;
+  margin: 0px 0px 4px 0px;
+  padding: 4px;
+  padding: 4px 8px 4px 8px;
+}
+#admin-introSection p {
+  margin: 0px;
+  padding: 4px 8px 4px 8px;
+}
+#admin-introSection ul {
+  margin-top: 4px;
+  margin-bottom: 8px;
+  padding-left: 24px;
+}
+#admin-introSection strong {
+  color: #503030;
+}
+
+/* Common styles */
+.admin .adminTableContainer {
+  border: 1px solid #C0C0C0;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+.admin .adminTableContainer table {
+  border-collapse: collapse;
+  table-layout: fixed;
+  width: 100%;
+}
+.admin .adminTableContainer table td {
+  overflow: hidden;
+  white-space: nowrap;
+}
+.admin span.adminListInProgress {
+  color: #163572;
+}
+
+/* Tool/Privilege list */
+.admin .adminLoadingText {
+  color: #808080;
+  padding: 4px;
+}
+#admin-privilegeListSection table { width: 100%; }
+#admin-privilegeListSection th {
+  color: #606060;
+  text-align: left;
+}
+#admin-privilegeListSection .i3tableContainer {
+  border: 0px;
+}
+#admin-toolListCell { width: 40%; }
+#admin-toolListContainer { height: 200px; }
+#admin-privilegeListCell { width: 60%; }
+#admin-privilegeListContainer { height: 200px; }
+.toolListIconCell {
+  padding: 4px 0px 4px 8px;
+  width: 40px;
+}
+.admin .privilegeListIconCell {
+  padding: 8px 0px 8px 8px;
+  width: 32px;
+}
+.admin .toolListTextCell, .admin .privilegeListTextCell {
+  height: 40px;
+  padding: 4px;
+}
+.admin .toolListArrowCell {
+  color: #C0C0C0;
+  font-weight: bold;
+  width: 16px;
+}
+.admin .listItemName {
+  color: #000000;
+  cursor: default;
+  font-weight: bold;
+}
+.admin .listItemDescription {
+  color: #808080;
+  cursor: default;
+}
+.admin .listItemDescriptionError {
+  color: #800000;
+  cursor: default;
+}
+.admin .i3tableRowSelected .listItemDescription {
+  color: #B0B0B0;
+}
+.admin .i3tableRowSelected .listItemDescriptionError {
+  color: #400000;
+}
+
+/* Assignee section header */
+#admin-assigneeHeader {
+  color: #606060;
+}
+#admin-assigneeHeader strong {
+  color: #503030;
+}
+
+/* Existing users/groups */
+#admin-assigneeExistingContainer {
+  height: 220px;
+  margin-bottom: 10px;
+}
+#admin-assigneeExistingContainer .i3tableContainer {
+  border: 0px;
+}
+.admin .existingListIconCell {
+  padding-left: 8px;
+  width: 24px;
+}
+.admin .existingListTextCell {
+  padding: 4px;
+}
+.admin .existingListRemoveCell {
+  text-align: right;
+  padding: 4px 8px 4px 4px;
+  width: 100px;
+}
+.admin .existingListItemName {
+  font-weight: bold;
+}
+.admin .existingListItemDescription {
+  color: #808080;
+}

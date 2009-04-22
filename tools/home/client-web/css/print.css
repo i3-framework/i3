@@ -1,0 +1,109 @@
+/**
+ * Stylesheet: home/client-web/css/print
+ *
+ * Printer-friendly adjustments for the Home Page tool.
+ *
+ * Credits:
+ * 
+ *   Written by Marshall Elfstrand (marshall@vengefulcow.com).
+ * 
+ * Copyright / License:
+ * 
+ *   Copyright 2009 Mission Aviation Fellowship
+ * 
+ *   Licensed under the Apache License, Version 2.0 (the "License");
+ *   you may not use this file except in compliance with the License.
+ *   You may obtain a copy of the License at
+ * 
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ *   Unless required by applicable law or agreed to in writing, software
+ *   distributed under the License is distributed on an "AS IS" BASIS,
+ *   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *   See the License for the specific language governing permissions and
+ *   limitations under the License.
+ *
+ * Version:
+ *   $Id: print.css 82 2008-04-02 22:26:09Z nmellis $
+ */
+ 
+/* Adjust section headers for black and white printing. */
+.home h3 {
+  color: black;
+}
+#homeNews h3 {
+  background: none;
+  font-weight: bold;
+  border-bottom: 1px solid #000000;
+}
+#homeNews h4, #home-customNews h4 {
+  background: none;
+}
+#homeWeather h3 {
+  background: none;
+  font-weight: bold;
+  border-bottom: 1px solid #808080;
+}
+#homeWeather h4, #home-customWeather h4 {
+  background: none;
+}
+
+/* Remove "Where to Look" sidebar. */
+#homeLinkList {
+  display: none;
+}
+#homeNews {
+  margin-left: 0px;
+  margin-right: 160px;
+}
+
+/* Adjust Weather sidebars for black and white printing. */
+#homeWeather {
+  background: none;
+  border: 1px solid #808080;
+}
+#homeWeatherContent {
+  border: none;
+}
+.homeWeatherDateline {
+  color: #808080;
+  font-size: 10px;
+  font-style: italic;
+  margin: 0px 0px 4px 0px;
+  padding-left: 4px;
+}
+.homeWeatherHead {
+  background: none;
+  font-size: 12px;
+  font-weight: bold;
+  margin: 8px 0px 0px 0px;
+  padding: 0px;
+}
+#home-customWeatherContent {
+  border: none;
+}
+
+/* Hide section headers and Save box on Customize page. */
+#home-customNews h3, #home-customWeather h3, #home-customSaveCancel, .home p.dragInstructions {
+  display: none !important;
+}
+
+/* Dim "Add" links on Customize page. */
+#home-customNewsAvailable a {
+  color: #A0A0A0;
+}
+
+/* Hide weather search box on Customize page. */
+#home-customWeatherSearch {
+  display: none;
+}
+
+/* Hide drag instructions on Customize page. */
+.home p.dragInstructions {
+  display: none;
+}
+
+/* Hide links on Customize page. */
+.home .draggableBoxRemove {
+  display: none;
+}

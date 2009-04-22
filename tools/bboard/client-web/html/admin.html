@@ -1,0 +1,199 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+  "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <link rel="stylesheet" type="text/css" href="/bboard/client-web/css/admin.css" />
+  <script type="text/javascript" src="/common/client-web/js/menus.js"></script>
+  <script type="text/javascript" src="/common/client-web/js/tables.js"></script>
+  <script type="text/javascript" src="/common/client-web/js/directory-browser.js"></script>
+  <script type="text/javascript" src="/bboard/client-web/js/admin.js"></script>
+  <title>Bulletin Board - Administration</title>
+</head>
+
+<body>
+  <div id="appletContent"><div class="bboard">
+
+    <!--
+    ====================================================================
+    Topic List
+    ====================================================================
+    -->
+
+    <div id="bboard-adminTopicContainer">
+      <div id="bboard-adminTopicList">
+        <div id="bboard-adminTopicsLoading">
+          Loading Topics... <img src="/$theme/client-web/img/working.gif" />
+        </div>
+      </div>
+      <div id="bboard-adminTopicButtons" style="display:none">
+        <div id="bboard-adminAddTopicButton"
+             class="bboard-adminTopicButton">+</div>
+        <div id="bboard-adminRemoveTopicButton"
+             class="bboard-adminTopicButton" style="visibility:hidden">-</div>
+        <div class="bboard-clear">&nbsp;</div>
+      </div>
+      <div id="bboard-adminTopicButtonLabel"></div>
+    </div>
+
+    <!--
+    ====================================================================
+    Topic Editing Area 
+    ====================================================================
+    -->
+
+    <div id="bboard-adminContent">
+
+      <!-- Intro Section -->
+
+      <div id="bboard-adminIntroSection">
+        <h4>About Permissions</h4>
+        <p>
+          Each bulletin board topic has a set of <b>permissions</b>.
+          A permission provides a set of <b>privileges</b> to an individual
+          user, a group of users, or all users of a topic.  The following
+          privileges can be assigned:
+        </p>
+        <ul>
+          <li>
+            <b>View</b><br />
+            Users with this privilege can see the topic in lists and
+            read the posts and comments that have been made in the topic.
+          </li>
+          <li>
+            <b>Post</b><br />
+            Users with this privilege can post new messages in the topic.
+          </li>
+          <li>
+            <b>Comment</b><br />
+            Users with this privilege can comment on existing messages.
+          </li>
+          <li>
+            <b>Moderate</b><br />
+            Users with this privilege can modify or delete the messages
+            and comments that have been posted by others.  This privilege
+            can only be granted to specific users or groups.
+          </li>
+        </ul>
+        <p>
+          A user is considered to have a privilege if the user is a member of
+          any group that has the privilege.  For example, if a topic is
+          viewable by everyone, and the topic also has a permission entry for
+          an individual user, it does not matter if the user specifically has
+          the view privilege or not; the user will automatically gain the
+          privilege that all users have.
+        </p>
+      </div>
+
+      <!-- Editing Fields -->
+
+      <div id="bboard-adminTopicInfoSection" style="display:none">
+
+        <div class="bboard-adminCaption">
+          Name / Description:
+        </div>
+        <div id="bboard-adminTopicInfoFields">
+          <table>
+            <tr>
+              <td>Name:</td>
+              <td><input id="bboard-adminTopicName" /></td>
+            </tr>
+            <tr>
+              <td>Description:</td>
+              <td><input id="bboard-adminTopicDescription" /></td>
+            </tr>
+            <tr>
+              <td colspan="2">
+                <input id="bboard-adminRevertButton"
+                       type="button" value="Revert" />
+                <input id="bboard-adminSaveButton"
+                       type="button" value="Save" />
+              </td>
+            </tr>
+          </table>
+        </div>
+
+        <!-- Permission Table -->
+
+        <div class="bboard-adminCaption">
+          Permissions:
+        </div>
+        <div id="bboard-adminPrivilegeTable"></div>
+        <div id="bboard-adminPrivilegeFooter">
+          <table>
+            <tr>
+              <td id="bboard-adminSaving" style="visibility:hidden">
+                Saving... <img src="/$theme/client-web/img/working.gif" />
+              </td>
+              <td id="bboard-adminPrivilegeButtons">
+                <input id="bboard-adminAddButton"
+                       type="button" value="Add Group/User..." />
+              </td>
+            </tr>
+          </table>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!--
+    ====================================================================
+    User/Group Popup Dialog
+    ====================================================================
+    -->
+
+    <div id="bboard-adminUserPopup" style="display:none"></div>
+
+    <!--
+    ====================================================================
+    Add Topic Dialog
+    ====================================================================
+    -->
+    <div id="bboard-adminAddTopicPopup" style="display:none">
+      <table>
+        <tr id="bboard-adminRestoreRow">
+          <td>Restore:</td>
+          <td>
+            <select id="bboard-adminRestoreList">
+              <option>(None)</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td>Name:</td>
+          <td>
+            <input id="bboard-adminNewTopicName" />
+          </td>
+        </tr>
+        <tr>
+          <td>Description:</td>
+          <td><input id="bboard-adminNewTopicDescription" /></td>
+        </tr>
+      </table>
+      <div id="bboard-adminNewTopicButtons"></div>
+    </div>
+
+    <!--
+    ====================================================================
+    Remove Topic Confirmation Dialog
+    ====================================================================
+    -->
+
+    <div id="bboard-adminConfirmationPopup" style="display:none">
+      <p>
+        <strong>Are you sure you want to delete the topic
+        "<span id="bboard-adminConfirmationTopicName"></span>"?</strong>
+      </p>
+      <p>
+        All articles and comments in this topic will become inaccessible. <br />
+        The topic can later be restored by clicking the Add (+) button.
+      </p>
+    </div>
+
+    <div class="bboard-clear">&nbsp;</div>
+  </div></div>
+</body>
+
+</html>

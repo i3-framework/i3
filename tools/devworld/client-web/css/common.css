@@ -1,0 +1,193 @@
+/**
+ * Stylesheet: devworld/client-web/css/common
+ *
+ * CSS file for the Developer World tool.
+ *
+ * Credits:
+ * 
+ *   Written by Marshall Elfstrand (marshall@vengefulcow.com).
+ * 
+ * Copyright / License:
+ * 
+ *   Copyright 2009 Mission Aviation Fellowship
+ * 
+ *   Licensed under the Apache License, Version 2.0 (the "License");
+ *   you may not use this file except in compliance with the License.
+ *   You may obtain a copy of the License at
+ * 
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ *   Unless required by applicable law or agreed to in writing, software
+ *   distributed under the License is distributed on an "AS IS" BASIS,
+ *   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *   See the License for the specific language governing permissions and
+ *   limitations under the License.
+ *
+ * Version:
+ *   $Id: common.css 81 2008-04-02 22:11:11Z nmellis $
+ */
+
+.devworld h4 {
+  background: #E0E0E0;
+  color: #404040;
+  padding: 8px;
+}
+.devworld div.clear {
+  clear: both;
+  height: 4px;
+}
+
+.devworld #devworld-serviceConfigContainer {
+  background: #E0E0E0;
+  border: 1px solid #C0C0C0;
+  float: left;
+  margin-left: 16px;
+  padding: 8px;
+  width: 420px;
+}
+.devworld #devworld-serviceListContainer table th,
+.devworld #devworld-serviceMethodLabel,
+.devworld #devworld-serviceParamsLabel {
+  color: #808080;
+  font-size: 100%;
+  font-weight: bold;
+  text-align: left;
+}
+.devworld #devworld-toolList {
+  width: 200px;
+}
+.devworld #devworld-serviceList {
+  width: 200px;
+}
+
+.devworld #devworld-serviceMethodContainer {
+  padding-top: 8px;
+}
+.devworld #devworld-methodList {
+}
+
+.devworld #devworld-serviceParamsContainer {
+  padding-top: 8px;
+}
+.devworld #devworld-serviceParamsInput {
+  margin-top: 8px;
+  width: 100%;
+}
+
+.devworld #devworld-serviceURIPreviewContainer {
+  margin-top: 16px;
+}
+.devworld #devworld-serviceURILabel {
+  color: #808080;
+  font-weight: bold;
+  padding-right: 8px;
+}
+.devworld #devworld-serviceMethodPreview {
+  color: black;
+  font-family: "Courier New", Courier, Monaco, monospace;
+  font-weight: bold;
+  padding-right: 8px;
+}
+.devworld #devworld-serviceURIPreview {
+  color: black;
+  font-family: "Courier New", Courier, Monaco, monospace;
+  font-weight: normal;
+}
+.devworld #devworld-serviceButtonContainer {
+  text-align: right;
+}
+.devworld #devworld-serviceButton {
+  width: 60px;
+}
+
+.devworld #devworld-servicePostContainer {
+  background: #E0E0E0;
+  border: 1px solid #C0C0C0;
+  display: none;
+  margin-left: 468px;
+  padding: 8px;
+  width: 300px;
+}
+.devworld #devworld-servicePostContainer h5 {
+  color: #808080;
+  font-size: 100%;
+  font-weight: bold;
+  margin-top: 4px;
+  margin-bottom: 4px;
+}
+.devworld #devworld-servicePostText {
+  font-family: "Courier New", Courier, Monaco, monospace;
+  font-size: 10px;
+  height: 234px;
+  width: 292px;
+}
+
+.devworld #devworld-serviceResultContainer {
+  background: #E0E8F0;
+  border: 1px solid #C0C0C0;
+  margin-left: 16px;
+  padding: 8px;
+  width: 620px;
+}
+.devworld #devworld-serviceLoading,
+.devworld #devworld-serviceResults,
+.devworld #devworld-serviceError {
+  display: none;
+}
+
+.devworld .resultHeaderLabel {
+  color: #808080;
+  font-weight: bold;
+  padding-right: 8px;
+}
+.devworld #devworld-resultView {
+  background: white;
+  border: 1px solid #C0C0C0;
+  font-family: Courier, "Courier New", monospace;
+  margin-top: 8px;
+  overflow: auto;
+  padding: 8px;
+  width: 600px;
+}
+.devworld #devworld-resultView div {
+  margin-top: 4px;
+  margin-bottom: 4px;
+}
+.devworld #devworld-resultView .jsObject {
+  background: white;
+  border: 1px solid #D0D0D0;
+  margin: 2px 2px 8px 2px;
+  padding-left: 1.5em;
+  padding-right: 2px;
+  text-indent: -1em;
+}
+.devworld #devworld-resultView .jsArray {
+  background: #F0F0FF;
+  border: 1px solid #C0C0FF;
+  padding-left: 1.5em;
+  padding-right: 2px;
+}
+.devworld #devworld-resultView .jsArray .jsObject {
+  background: #F8F8FF;
+}
+.devworld #devworld-resultView .jsArray ol {
+  margin: 0px;
+  padding: 4px 4px 4px 16px;
+  text-indent: 0px;
+}
+.devworld #devworld-resultView .jsString {
+  color: #600000;
+}
+.devworld #devworld-resultView .jsKeyword {
+  color: #000080;
+}
+.devworld #devworld-resultView .jsNull {
+  color: #808080;
+}
+
+p.devworld-trac-notice {
+  background-color: #FFE8E0;
+  color: #600000;
+  margin: 8px;
+  padding: 8px;
+}

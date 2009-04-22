@@ -1,0 +1,402 @@
+/**
+ * Stylesheet: themes/default/client-web/css/i3-theme
+ *
+ * CSS file for i3 default theme.
+ *
+ * Many of the tags listed in this file are created dynamically by i3-nav.js.
+ * Just in case you're wondering.
+ *
+ * Credits:
+ * 
+ *   Written by
+ *     Marshall Elfstrand (marshall@vengefulcow.com) and
+ *     Nathan Mellis (nathan@mellis.us).
+ * 
+ * Copyright / License:
+ * 
+ *   Copyright 2009 Mission Aviation Fellowship
+ * 
+ *   Licensed under the Apache License, Version 2.0 (the "License");
+ *   you may not use this file except in compliance with the License.
+ *   You may obtain a copy of the License at
+ * 
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ *   Unless required by applicable law or agreed to in writing, software
+ *   distributed under the License is distributed on an "AS IS" BASIS,
+ *   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *   See the License for the specific language governing permissions and
+ *   limitations under the License.
+ *
+ * Version:
+ *   $Id: i3-theme.css 114 2008-06-23 20:28:54Z nmellis $
+ */
+
+/* Standard tags */
+body {
+  background: #EBEBEB;
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  margin: 0px;
+  padding: 0px;
+}
+h3 {
+  font-size: 14px;
+}
+.i3titleLoading {
+  color: #7695D2;
+}
+
+/* Navigation bar */
+#i3navbar {
+  background: #E0E0E0;
+  border-top: 1px solid #A0A0A0;
+  border-left: 1px solid #F0F0F0;
+  border-right: 1px solid #F0F0F0;
+  border-bottom: 1px solid #F0F0F0;
+  margin: 12px 24px 12px 24px;
+  -moz-border-radius: 12px;
+  -webkit-border-radius: 12px;
+}
+#i3header {
+  background: #702828 url(/$theme/client-web/img/header.gif) top left repeat-x;
+  border-left: 1px solid #000000;
+  border-right: 1px solid #000000;
+  border-bottom: 1px solid #000000;
+  height: 42px;
+  margin: 0px;
+  -moz-background: none;
+  -moz-border-radius-topleft: 11px;
+  -moz-border-radius-topright: 11px;
+  -webkit-border-top-left-radius: 11px;
+  -webkit-border-top-right-radius: 11px;
+}
+.i3-browser-mozilla.i3-browser-legacy #i3header {
+  background-image: none;
+}
+#i3header h1 {
+  font-size: 18px;
+  height: 42px;
+  margin: 0px;
+  padding: 9px 12px 9px 12px;
+}
+#i3header h1 span {
+  color: #FFFFFF;
+  opacity: 0.8;
+}
+.i3-browser-mozilla.i3-browser-legacy #i3header h1 span {
+  opacity: 0.85;
+}
+#i3siteSearchContainer {
+  float: right;
+  padding-right: 11px;
+  padding-top: 11px;
+}
+#i3siteSearch {
+  font-size: 10px;
+  width: 175px;
+}
+#i3siteSearch.empty {
+  color: #666666;
+}
+#i3navbarOptions {
+  font-size: 20px;
+  height: 58px;
+  padding-top: 20px;
+  position: absolute;
+  right: 36px;
+  z-index: 100;
+}
+#i3navbarOptionsLink {
+  background: url(/common/client-web/img/navbar-buttons.png) no-repeat;
+  background-position: 0 -48px;
+  display: block;
+  float: left;
+  height: 16px;
+  width: 16px;
+}
+#i3navbarOptionsLink span {
+  display: none;
+}
+#i3navbarOptionsText {
+  background: #FFFFFF;
+  border: 1px solid #808080;
+  color: #808080;
+  display: none;
+  float: left;
+  font-size: 10px;
+  margin-right: 4px;
+  padding: 2px 4px 2px 4px;
+}
+#i3navbarOptions:hover #i3navbarOptionsLink {
+  background: url(/common/client-web/img/navbar-buttons.png) no-repeat;
+  background-position: 0 -32px;
+  cursor: pointer;
+}
+#i3navbarOptions:hover #i3navbarOptionsText {
+  display: block;
+  cursor: pointer;
+}
+#i3quickLinks {
+  border-top: 1px solid #F0F0F0;
+  border-left: 1px solid #A0A0A0;
+  border-right: 1px solid #A0A0A0;
+  border-bottom: 1px solid #A0A0A0;
+  height: 58px;
+  padding: 8px 8px 5px 8px;
+  overflow: hidden;
+}
+#i3navbarIcons img {
+  border: none;
+}
+.i3quickLinkCaption {
+  font-size: 12px;
+  padding-left: 3px;
+  padding-right: 3px;
+}
+.i3quickLinkCaption * {
+  white-space: nowrap;
+}
+.i3quickLinkCaption a {
+  color: #000000;
+  text-decoration: none;
+}
+.i3quickLinkCaption a:hover {
+  color: #000080;
+  text-decoration: underline;
+}
+.i3quickLinkCaption span.i3quickLinkCaptionHover a {
+  /* Highlights link when mouse is over icon */
+  color: #000080;
+  text-decoration: underline;
+}
+#i3quickLinkSeparator {
+  border-right: 1px solid #C0C0C0;
+  width: 8px;
+}
+#i3quickLinkSpacer {
+  width: 8px;
+}
+#i3quickLinkCustomize {
+  font-size: 12px;
+  padding-left: 16px;
+}
+#i3youAreHere {
+  border-top: 1px solid #F0F0F0;
+  border-left: 1px solid #A0A0A0;
+  border-right: 1px solid #A0A0A0;
+  border-bottom: 1px solid #A0A0A0;
+  height: 26px;
+  padding: 5px 8px 5px 8px;
+  -moz-border-radius-bottomleft: 11px;
+  -moz-border-radius-bottomright: 11px;
+  -webkit-border-bottom-left-radius: 11px;
+  -webkit-border-bottom-right-radius: 11px;
+}
+#i3youAreHereText {
+  color: #808080;
+  font-size: 12px;
+  font-weight: bold;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+#i3youAreHere td {
+  font-size: 12px;
+}
+#i3youAreHere td.i3youAreHereArrow {
+  color: #808080;
+  font-weight: bold;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+#i3youAreHereAdd {
+  color: #C0C0C0;
+  font-size: 16px;
+  height: 26px;
+  padding-top: 5px;
+  position: absolute;
+  right: 36px;
+  z-index: 100;
+}
+#i3youAreHereAddLink {
+  background: url(/common/client-web/img/navbar-buttons.png) no-repeat;
+  background-position: 0 -16px;
+  display: block;
+  float: left;
+  height: 16px;
+  width: 16px;
+}
+#i3youAreHereAddLink span {
+  display: none;
+}
+#i3youAreHereAddText {
+  background: #FFFFFF;
+  border: 1px solid #808080;
+  color: #808080;
+  display: none;
+  float: left;
+  font-size: 10px;
+  margin-right: 4px;
+  padding: 2px 4px 2px 4px;
+}
+#i3youAreHereAdd:hover #i3youAreHereAddLink {
+  background-position: 0 0;
+  cursor: pointer;
+}
+#i3youAreHereAdd:hover #i3youAreHereAddText {
+  display: block;
+  cursor: pointer;
+}
+
+/* Navigation bar pop-up dialog: Add Quick Link */
+#i3navbarQuickLinksAddPopup {
+  display: none;
+  padding: 4px;
+  width: 500px;
+}
+#i3navbarQuickLinksAddIcon {
+  padding: 16px;
+  vertical-align: middle;
+}
+.i3navbarQuickLinksAddLabel {
+  color: #808080;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 4px;
+  text-align: right;
+}
+#i3navbarQuickLinksAddCaption {
+  border: 1px solid #808080;
+  font-size: 12px;
+  padding: 4px;
+  width: 300px;
+}
+#i3navbarQuickLinksAddPath {
+  color: #808080;
+  font-size: 12px;
+}
+#i3navbarQuickLinksAddStatus {
+  color: #808080;
+  float: left;
+  padding: 12px;
+  margin-bottom: 0px;
+  visibility: hidden;
+}
+
+/* Navigation bar pop-up dialog: Edit/Remove Quick Links */
+#i3navbarQuickLinksEditPopup {
+  display: none;
+  padding: 4px;
+}
+#i3navbarQuickLinksEditHelp {
+  color: #808080;
+  font-size: 10px;
+  font-style: italic;
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+#i3navbarQuickLinksEditGrid {
+  background: #E0E0E0;
+  border: 1px solid #C0C0C0;
+}
+.i3navbarQuickLinksEditItem {
+  height: 50px;
+  width: 75px;
+  float: left;
+  padding: 8px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  position: relative;
+}
+.i3navbarQuickLinksEditIcon {
+  cursor: move;
+  padding-bottom: 4px;
+  text-align: center;
+}
+.i3navbarQuickLinksEditCaption {
+  cursor: move;
+  text-align: center;
+}
+.i3navbarQuickLinksEditItemCap {
+  clear: left;
+}
+#i3navbarQuickLinksEditFields {
+  background: #C0E0F0;
+  border: 2px solid #8090A0;
+  color: #8090A0;
+  margin: 0px;
+  padding: 4px;
+  position: absolute;
+  text-align: center;
+  z-index: 10;
+}
+input.i3navbarQuickLinksEditText {
+  border: 1px solid #8090A0;
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  margin-bottom: 4px;
+  padding: 4px;
+  text-align: center;
+  width: 100px;
+}
+#i3navbarQuickLinksEditFields a {
+  color: #800000;
+  font-size: 10px;
+}
+#i3navbarQuickLinksEditFields a:hover {
+  color: #FF0000;
+}
+#i3navbarQuickLinksEditStatus {
+  color: #808080;
+  float: left;
+  padding: 16px 4px 0px 4px;
+  margin-bottom: 0px;
+  visibility: hidden;
+}
+
+/* Rounded content border */
+#i3contentWrapper {
+  background: #FFFFFF;
+  border: 1px solid #A0A0A0;
+  margin-left: 24px;
+  margin-right: 24px;
+  margin-bottom: 12px;
+  -webkit-box-shadow: #A0A0A0 0px 6px 8px;
+  -moz-border-radius: 12px;
+  -webkit-border-radius: 12px;
+}
+#i3content {
+  font-size: 12px;
+}
+#i3pageTitle {
+  background: #365592;
+  color: #FFFFFF;
+  font-weight: normal;
+  font-size: 20px;
+  margin: 6px 6px 10px 6px;
+  padding: 10px;
+  -moz-border-radius-topleft: 8px;
+  -moz-border-radius-topright: 8px;
+  -webkit-border-top-left-radius: 8px;
+  -webkit-border-top-right-radius: 8px;
+}
+#i3content table {
+  font-size: 12px;
+}
+
+/* Copyright */
+#i3copyright {
+  background: #E0E0E0;
+  color: #808080;
+  font-size: 10px;
+  margin: 10px 6px 6px 6px;
+  padding: 10px;
+  -moz-border-radius-bottomleft: 8px;
+  -moz-border-radius-bottomright: 8px;
+  -webkit-border-bottom-left-radius: 8px;
+  -webkit-border-bottom-right-radius: 8px;
+}
+
+/* Applet */
+#appletContent {
+  margin: 6px;
+}

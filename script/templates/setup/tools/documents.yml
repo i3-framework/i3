@@ -1,0 +1,21 @@
+# ============================================================================
+# Documents Tool Configuration
+# ============================================================================
+
+# Location of files to be shared through the Documents tool.
+document_root: /Shared Items
+
+# Share to display if no folder matching an OU for the account is found.
+default_overview_folder: Public
+
+# Folders that will be grouped into collections from the various shares.
+collections:
+  - Forms
+  - Handbooks
+  - Media
+  - Policies
+  - Software
+
+# Host and port for the permission checker.
+host: 127.0.0.1
+port: 7999

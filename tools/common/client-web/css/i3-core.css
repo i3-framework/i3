@@ -1,0 +1,568 @@
+/**
+ * Stylesheet: common/client-web/css/i3-core
+ *
+ * CSS file for i3 core elements.
+ *
+ * Credits:
+ * 
+ *   Written by
+ *     Marshall Elfstrand (marshall@vengefulcow.com) and
+ *     Nathan Mellis (nathan@mellis.us).
+ * 
+ * Copyright / License:
+ * 
+ *   Copyright 2009 Mission Aviation Fellowship
+ * 
+ *   Licensed under the Apache License, Version 2.0 (the "License");
+ *   you may not use this file except in compliance with the License.
+ *   You may obtain a copy of the License at
+ * 
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ *   Unless required by applicable law or agreed to in writing, software
+ *   distributed under the License is distributed on an "AS IS" BASIS,
+ *   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *   See the License for the specific language governing permissions and
+ *   limitations under the License.
+ *
+ * Version:
+ *   $Id: i3-core.css 73 2008-04-02 19:20:01Z nmellis $
+ */
+
+/* Pop-up dialog */
+.i3popupFader {
+  background: #EBEBEB;
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  min-height: 100%;
+  z-index: 200;
+}
+.i3popupContainer {
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  min-height: 100%;
+  z-index: 201;
+}
+.i3popupBorder {
+  background: white;
+  border: 8px solid #406090;
+  font-size: 12px;
+  margin-left: auto;
+  margin-right: auto;
+  overflow: hidden;
+  padding: 4px;
+  -webkit-box-shadow: #808080 0px 2px 8px;
+}
+.i3popupTitle {
+  background: #5070A0;
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 4px;
+}
+.i3popupButtons {
+  margin: 8px;
+  text-align: right;
+}
+.i3popupError .i3popupBorder {
+  border: 8px solid #600000;
+}
+.i3popupError .i3popupTitle {
+  background: #700000;
+}
+.i3popupErrorMessage {
+  color: #000000;
+  font-weight: bold;
+  font-size: 14px;
+  margin: 8px;
+}
+.i3popupErrorHelp {
+  color: #404040;
+  font-size: 12px;
+  margin: 8px;
+}
+
+/* Tables (used by /common/client-web/js/tables.js) */
+.i3tableContainer {
+  border: 1px solid #C0C0C0;
+}
+.i3tableContainer table {
+  width: 100%;
+}
+.i3tableHead {
+  background: #C0E0FF;
+}
+.i3tableHead th {
+  border-top: 1px solid #D0F0FF;
+  border-left: 1px solid #D0F0FF;
+  border-right: 1px solid #80A0C0;
+  border-bottom: 1px solid #80A0C0;
+  white-space: nowrap;
+}
+.i3tableHead th.i3tableHeadClicked {
+  background: #B0D0F0;
+  border-top: 1px solid #80A0C0;
+  border-left: 1px solid #80A0C0;
+  border-right: 1px solid #D0F0FF;
+  border-bottom: 1px solid #D0F0FF;
+}
+.i3tableHead th.i3tableHeadSelected {
+  background: #B8D8F8;
+}
+.i3tableHeadSelectedArrow {
+  color: #80A0C0;
+}
+.i3tableHeadNonSelectedArrow {
+  color: #C0E0FF;
+}
+.i3tableRow {
+  background: #FFFFFF;
+}
+.i3tableRowAlt {
+  background: #F0F8FF;
+}
+.i3tableRowSelected {
+  background: #5675B2;
+  color: #FFFFFF;
+}
+.i3tableSearch {
+  background: #F0F0F0;
+  border: 1px dashed #D0D0D0;
+  padding: 8px;
+  margin-bottom: 4px;
+}
+.i3tableSearchStatus {
+  color: #808080;
+  padding-left: 8px;
+}
+h4.i3tableTitle {
+  color: #404040;
+  font-weight: normal;
+  font-size: 14px;
+  margin: 0px 0px 4px 0px;
+}
+
+/* List Controllers (used by /common/client-web/js/list-controller.js) */
+.i3listContainer {
+  border: 1px solid #C0C0C0;
+}
+.i3listContainer ul {
+  width: 100%;
+  list-style: none;
+  padding: 0px;
+  margin: 0px;
+}
+.i3listContainer ul li {
+  padding: 6px;
+}
+.i3listItem {
+  background: #FFFFFF;
+}
+.i3listItemAlt {
+  background: #F0F8FF;
+}
+.i3listSearch {
+  background: #F0F0F0;
+  border: 1px dashed #D0D0D0;
+  padding: 8px;
+  margin-bottom: 4px;
+}
+.i3listSearchStatus {
+  color: #808080;
+  padding-left: 8px;
+}
+h4.i3listTitle {
+  color: #404040;
+  font-weight: normal;
+  font-size: 14px;
+  margin: 0px 0px 4px 0px;
+}
+
+/* Tabbed Panels (used by /common/client-web/js/tabs.js) */
+.i3tabContainer {
+}
+.i3tabStrip {
+  border-bottom: 1px solid #808080;
+  padding-bottom: 5px;
+  margin-top: 16px;
+}
+.i3tabStrip div {
+  border-top: 1px solid #808080;
+  border-right: 1px solid #808080;
+  display: inline;
+  padding: 5px;
+}
+.i3firstTabStripItem {
+  border-left: 1px solid #808080;
+}
+.i3tabStripItem {
+  background: #D0D0D0;
+}
+.i3selectedTabStripItem {
+  background: #FFFFFF;
+  border-bottom: 1px solid #FFFFFF;
+  color: #000000;
+}
+.i3tabPanel {
+  background: #FFFFFF;
+  border-bottom: 1px solid #808080;
+  border-left: 1px solid #808080;
+  border-right: 1px solid #808080;
+  padding: 10px 5px 5px 5px;
+}
+
+/* Menus (used by /common/client-web/js/menus.js) */
+.i3menuBackground {
+  background: #F0F0F0;
+}
+.i3menuTitleBackground {
+  background: #704040;
+}
+.i3menuTitle {
+  color: white;
+}
+.i3menuTitleContainer h3 {
+  font-weight: normal;
+  font-size: 14px;
+  margin: 0px;
+  padding: 4px 4px 4px 8px;
+}
+.i3menuContent {
+  border: 1px solid #C0C0C0;
+  border-top: none;
+  padding: 4px;
+}
+.i3menuTable {
+  border-collapse: collapse;
+  width: 100%;
+}
+.i3menuGroupRow td {
+  font-size: 12px;
+  font-weight: bold;
+  padding: 2px 0px 2px 0px;
+}
+.i3menuGroupRow td div {
+  padding: 4px;
+}
+.i3menuGroupBackground {
+  background: #C0C0C0;
+}
+.i3menuGroup {
+  color: black;
+}
+.i3menuItemIcon {
+  padding: 4px;
+}
+a.i3menuItemLink {
+  color: #202020;
+  text-decoration: none;
+  border-bottom: 1px solid #C0C0C0;
+}
+a.i3menuItemLink:hover {
+  border-bottom: 1px solid #000000;
+}
+.i3menuItemTitle {
+  font-size: 12px;
+  padding: 4px;
+  width: 100%;
+}
+.i3menuItemArrow {
+  color: #A0A0A0;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 4px;
+}
+.i3menuSelectedItem {
+  background: #503030;
+}
+.i3menuSelectedItemTitle {
+  color: white;
+  font-weight: bold;
+}
+.i3menuSelectedItemArrow {
+  color: white;
+}
+
+/* Date Chooser (used by /common/client-web/js/date-chooser.js) */
+.i3dateChooser {
+  position: relative;
+  z-index: 400;
+}
+.i3dateChooser table {
+  border: 1px solid #556;
+  font-size: 11px;
+  color: #000;
+  cursor: default;
+  background: #eef;
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+.i3dateChooserButton {
+  text-align: center;
+  padding: 2px;
+}
+.i3dateChooserNav {
+  background: #778;
+}
+.i3dateChooserTitle {
+  font-weight: bold;
+  text-align: center;
+  background: #fff;
+  color: #000;
+  padding: 2px;
+}
+.i3dateChooserHeaderRow {
+  background: #778;
+  color: #fff;
+}
+.i3dateChooserDayNames {
+  background: #bdf;
+}
+.i3dateChooserDayNameCell {
+  border-bottom: 1px solid #556;
+  padding: 2px;
+  text-align: center;
+  color: #000;
+}
+.i3dateChooserEmptyRow {
+  display: none;
+}
+.i3dateChooserDayRow {
+}
+.i3dateChooserEmptyCell {
+  visibility: hidden;
+}
+.i3dateChooserDisabled {
+  color: #999;
+}
+.i3dateChooserDayCell {
+  width: 2em;
+  color: #456;
+  text-align: right;
+  padding: 2px 4px 2px 2px;
+}
+.i3dateChooserToday {
+  font-weight: bold;
+}
+.i3dateChooserWeekend {
+  color: #a66;
+}
+.i3dateChooserAdjacentMonth {
+  font-size: 80%;
+  color: #bbb;
+}
+.i3dateChooserAdjacentMonthWeekend {
+  color: #fbb;
+}
+.i3dateChooser thead .i3dateChooserHighlighted {
+  background-color: #E8E8E8;
+  color: #000;
+  border: 1px solid #666;
+  padding: 1px;
+}
+.i3dateChooser tbody td.i3dateChooserHighlighted {
+  background: #def;
+  padding: 1px 3px 1px 1px;
+  border: 1px solid #bbb;
+}
+.i3dateChooser tbody .i3dateChooserHighlightedRow td {
+  background: #def;
+}
+.i3dateChooser tfoot .i3dateChooserHighlighted {
+  background: #aaf;
+  border: 1px solid #04f;
+  color: #000;
+  padding: 1px;
+}
+.i3dateChooser .i3dateChooserCombo .i3dateChooserHighlighted {
+  background: #acf;
+}
+.i3dateChooser td.i3dateChooserTimeSelector span.i3dateChooserHighlighted {
+  border-color: #000;
+  background-color: #667;
+  color: #fff;
+}
+.i3dateChooser tbody td.i3dateChooserSelected {
+  font-weight: bold;
+  border: 1px solid #000;
+  padding: 1px 3px 1px 1px;
+  background: #fff;
+  color: #000;
+}
+.i3dateChooser tbody td.i3dateChooserActive {
+  background: #cde;
+  padding: 2px 2px 0px 2px;
+}
+.i3dateChooserTimeSelector {
+  border-top: 1px solid #000;
+  padding: 1px 0px;
+  text-align: center;
+  background-color: #f4f0e8;
+}
+.i3dateChooserHour, .i3dateChooserMinute, .i3dateChooserAMPM {
+  padding: 0px 3px 0px 4px;
+  border: 1px solid #889;
+  font-weight: bold;
+  background-color: #fff;
+}
+.i3dateChooserAMPM {
+  text-align: center;
+}
+.i3dateChooserTimeSeperator {
+  padding: 0px 2px 0px 3px;
+  font-weight: bold;
+}
+.i3dateChooserFooter {
+  text-align: center;
+  background: #556;
+  color: #fff;
+}
+.i3dateChooserToolTip {
+  background: #fff;
+  color: #445;
+  border-top: 1px solid #556;
+  padding: 1px;
+}
+.i3dateChooserCombo {
+  position: absolute;
+  display: none;
+  top: 0px;
+  left: 0px;
+  width: 4em;
+  cursor: default;
+  border: 1px solid #655;
+  background: #def;
+  color: #000;
+  font-size: 90%;
+  z-index: 100;
+}
+.i3dateChooserComboItem {
+  text-align: center;
+  padding: 1px;
+}
+.i3dateChooserCombo .i3dateChooserHighlighted {
+  background: #acf;
+}
+.i3dateChooserCombo .i3dateChooserActive {
+  border-top: 1px solid #46a;
+  border-bottom: 1px solid #46a;
+  background: #eef;
+  font-weight: bold;
+}
+.i3dateChooserIconSpan {
+  margin-left: 2px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+
+/* Directory Browser (used by /common/client-web/js/directory-browser.js) */
+.i3directoryBrowserTable {
+  width: 100%;
+  table-layout: fixed;
+}
+.i3directoryBrowserTable th {
+  color: #606060;
+  font-size: 12px;
+  font-weight: bold;
+  margin-top: 4px;
+  margin-bottom: 4px;
+  text-align: left;
+}
+.i3directoryBrowserTable img {
+  vertical-align: middle;
+}
+.i3directoryBrowserRowSelectedInactive {
+  
+}
+.i3directoryBrowserCellHidden {
+  display: none;
+}
+.i3directoryBrowserListContainer {
+  height: 200px;
+  overflow: auto;
+  border: 1px solid #C0C0C0;
+}
+.i3directoryBrowserListContainer div.i3tableContainer {
+  border: 0px;
+}
+.i3directoryBrowserListContainer table {
+  border-collapse: collapse;
+  table-layout: fixed;
+  width: 100%;
+}
+.i3directoryBrowserListContainer table td {
+  cursor: default;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.i3directoryBrowserGroupListCell {
+  width: 50%;
+}
+.i3directoryBrowserGroupListIconCell {
+  
+}
+.i3directoryBrowserGroupListNameSpan {
+  padding-left: 4px;
+}
+.i3directoryBrowserGroupListDisabled .i3directoryBrowserGroupListNameSpan {
+  color: #808080;
+}
+.i3tableRowSelected.i3directoryBrowserGroupListDisabled .i3directoryBrowserGroupListNameSpan {
+  color: #C0D0E0;
+}
+.i3directoryBrowserUserListCell {
+  padding: 4px;
+}
+.i3directoryBrowserUserListIconCell {
+  padding-left: 8px;
+  width: 24px;
+}
+.i3directoryBrowserUserListNameSpan {
+  
+}
+.i3directoryBrowserUserListDescriptionSpan {
+  color: #808080;
+}
+.i3directoryBrowserUserListDisabled .i3directoryBrowserUserListNameSpan {
+  color: #808080;
+}
+.i3directoryBrowserUserListDisabled .i3directoryBrowserUserListDescriptionSpan {
+  color: #C0C0C0;
+}
+.i3tableRowSelected .i3directoryBrowserUserListDescriptionSpan {
+  color: #C0D0E0;
+}
+.i3directoryBrowserSelectionContainer {
+  color: #606060;
+  font-weight: bold;
+  padding: 8px 4px 0px 4px;
+}
+.i3directoryBrowserSelectionSpan {
+  color: #000000;
+  font-weight: normal;
+}
+.i3directoryBrowserSelectionSpan img {
+  margin: 0px 8px 0px 16px;
+  vertical-align: middle;
+}
+.i3directoryBrowserButtonContainer {
+  margin: 8px;
+  text-align: right;
+}
+.i3directoryBrowserButtonContainer input {
+  margin-left: 8px;
+}
+.i3directoryBrowserLoadingText {
+  color: #808080;
+  padding: 4px;
+}
+.i3directoryBrowserHelpText {
+  color: #808080;
+  font-style: italic;
+  padding: 4px;
+}
+

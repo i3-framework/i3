@@ -1,0 +1,181 @@
+/**
+ * Stylesheet: documents/client-web/css/common
+ *
+ * CSS file for the Documents tool.
+ *
+ * Credits:
+ *
+ *   Written by 
+ *     Marshall Elfstrand (marshall@vengefulcow.com) and
+ *     Nathan Mellis (nathan@mellis.us).
+ * 
+ * Copyright / License:
+ * 
+ *   Copyright 2009 Mission Aviation Fellowship
+ * 
+ *   Licensed under the Apache License, Version 2.0 (the "License");
+ *   you may not use this file except in compliance with the License.
+ *   You may obtain a copy of the License at
+ * 
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ *   Unless required by applicable law or agreed to in writing, software
+ *   distributed under the License is distributed on an "AS IS" BASIS,
+ *   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *   See the License for the specific language governing permissions and
+ *   limitations under the License.
+ *
+ * Version:
+ *   $Id: common.css 66 2008-03-17 19:16:01Z nmellis $
+ */
+
+/* General styles */
+.documents h3.documents-header {
+  color: #404040;
+  font-size: 14px;
+  font-weight: normal;
+  padding-top: 6px;
+  margin-bottom: 0px;
+}
+.documents h3.documents-header em {
+  color: #A0A0A0;
+  font-style: normal;
+}
+
+/* Toolbar area */
+.documents #documents-toolbar {
+  background: #F8F8F8;
+  border: 1px dashed #E0E0E0;
+  color: #404040;
+  display: none;
+  height: 24px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+.documents #documents-search {
+  float: left;
+  height: 24px;
+}
+.documents #documents-searchText {
+  margin-right: 16px;
+}
+.documents #documents-view {
+  display: none;
+  float: right;
+  height: 24px;
+  padding-top: 4px;
+}
+.documents .documents-fileHeader {
+  background: url(/common/client-web/img/file-types/folder-32.png) top left no-repeat;
+  height: 32px;
+  margin-top: 16px;
+/*  margin-bottom: 8px;*/
+  padding-left: 36px;
+}
+.documents .documents-searchHeader {
+  background: url(/documents/client-web/img/search-32.png) top left no-repeat;
+  height: 32px;
+  margin-top: 16px;
+  margin-bottom: 8px;
+  padding-left: 36px;
+}
+
+/* Table containers */
+.documents .documents-fileSection {
+  margin-top: 8px;
+}
+.documents .documents-fileSectionReadme {
+  background: #F0FFF8;
+  border: 1px dotted #E0E8E4;
+}
+.documents .documents-fileSectionReadmeHeader {
+  background: #E8F0EC;
+  border-top: 1px dotted #E0E8E4;
+  padding: 4px 2px 4px 2px;
+  color: #808080;
+  font-size: 10px;
+}
+.documents .documents-fileSectionReadmeText {
+  border-left: 1px dotted #E0E8E4;
+  border-right: 1px dotted #E0E8E4;
+  border-bottom: 1px dotted #E0E8E4;
+  padding: 8px;
+}
+.documents .documents-fileSectionReadmeText p {
+  margin-top: 12px;
+  margin-bottom: 0px;
+}
+.documents .documents-fileSectionReadmeText p:first-child {
+  margin-top: 0px;
+}
+
+
+/* CSS styles applied to table cells by TableView */
+.documents .documents-iconCell {
+  padding-left: 4px;
+  padding-right: 4px;
+  width: 32px;
+}
+.documents .documents-nameCell {
+  padding-left: 4px;
+  padding-right: 4px;
+  width: 100%;
+}
+.documents .documents-sizeCell {
+  padding-left: 4px;
+  padding-right: 4px;
+  white-space: nowrap;
+}
+.documents .documents-dateCell {
+  padding-left: 4px;
+  padding-right: 4px;
+  white-space: nowrap;
+}
+.documents td.documents-nameCell {
+  color: #808080;
+}
+.documents td.documents-sizeCell {
+  color: #808080;
+  text-align: right;
+}
+.documents td.documents-dateCell {
+  color: #808080;
+}
+
+/* CSS styles applied to the Shares Menu */
+.documents #documents-shares-menu {
+  float: left;
+  width: 190px;
+}
+.documents #documents-shares-menu .i3menuTitleContainer {
+  display: none;
+}
+.documents #documents-shares-menu .i3menuContent {
+  border-top: 1px solid #C0C0C0;
+}
+.documents #documents-shares-menu .i3menuGroupBackground {
+  background: #B0B8D0;
+}
+.documents #documents-shares-menu .i3menuGroup {
+  color: #000000;
+}
+.documents #documents-shares-menu .i3menuSelectedItem {
+  background: #163552;
+}
+.documents .documents-shares-menu-offset {
+  margin-left: 200px;
+}
+
+
+/* CSS styles applied to the File Upload popup */
+#documents-fileUploadFormContainer {
+  margin-top: 8px;
+}
+#documents-fileUploadProgressContainer {
+  margin-top: 10px;
+  color: #666666;
+  font-size: 18px;
+  font-weight: bold;
+  vertical-align: center;
+  text-align: center;
+}

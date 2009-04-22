@@ -1,0 +1,33 @@
+# ============================================================================
+# Bulletin Board Tool Configuration
+# ============================================================================
+
+base_url: "https://intranet.company.com"
+
+unsubscribe_text: "You are receiving this email because you are subscribed to receive a notices for certain topics on the Intranet Bulletin Board.  To unsubscribe, please visit:"
+unsubscribe_instructions: "and de-select any or all topics from the list."
+
+#
+# Digest Message settings
+# 
+digest_settings:
+  subject: "[Bulletin Board] Daily Digest"
+  from: "Bulletin Board <bulletin-board@company.com>"
+
+#
+# Immediate Message settings
+# 
+# For messages that are sent as soon as a message is posted, you can specify a different 
+# Reply-To address here.
+# 
+# (start example)
+# notice_settings:
+#   reply_to:
+#     host: intranet.company.com
+#     user: bulletin-board-replies
+# (end example)
+# 
+# In addition to the `host` property, you can also specify a `user` property to have the messages 
+# go to a particluar email account.  If the `user` property is not set, then it will be 
+# automatically set to the permalink of the topic that that article notice was from.
+# 

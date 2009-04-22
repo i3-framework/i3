@@ -1,0 +1,175 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+  "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <style type="text/css">
+    body {
+      background: #EBEBEB;
+      font-family: Verdana, Arial, Helvetica, sans-serif;
+    }
+    #i3preloader {
+      text-align: center;
+      width: 100%;
+    }
+    #i3preloadText {
+      color: #808080;
+      font-size: 14px;
+      font-variant: small-caps;
+      font-weight: bold;
+      margin-top: 48px;
+      margin-bottom: 8px;
+      text-align: center;
+    }
+    #i3preloadProgress {
+      border: 1px solid #808080;
+      display: none;
+      height: 16px;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: left;
+      width: 300px;
+    }
+    #i3preloadProgress div {
+      background: #C0C0C0;
+      height: 100%;
+      width: 0%;
+    }
+    #i3preloadStatus {
+      color: #A0A0A0;
+      font-size: 10px;
+      margin-top: 8px;
+      text-align: center;
+    }
+    #i3preloader, #i3navbar, #i3contentWrapper {
+      display: none;
+    }
+    iframe.i3controller {
+      border: 0px;
+      height: 0px;
+      width: 0px;
+    }
+  </style>
+</head>
+
+<body class="<%= browser_classname %>">
+
+  <!-- Text for when JavaScript support is missing -->
+  <noscript>
+    <div id="i3noscript">
+      <h2>JavaScript is disabled</h2>
+      <p>
+        It looks like JavaScript is disabled in your browser.
+      </p>
+      <p>
+        The intranet makes heavy use of the latest web technologies,
+        and relies on JavaScript to provide interactivity and improve
+        performance.
+      </p>
+      <p>
+        Please enable JavaScript and try again.
+      </p>
+    </div>
+  </noscript>
+
+  <!-- Loading details -->
+  <div id="i3preloader">
+    <p id="i3preloadText">Loading...</p>
+    <div id="i3preloadProgress"><div></div></div>
+    <p id="i3preloadStatus"></p>
+  </div>
+
+  <!-- Navigation bar -->
+  <div id="i3navbar">
+    <div id="i3header">
+      <div id="i3siteSearchContainer">
+        <input id="i3siteSearch" type="search" class="empty" value="Search the Intranet" />
+      </div>
+      <h1><span id="i3title"></span></h1>
+    </div>
+    <div id="i3quickLinks">
+      <div id="i3navbarOptions">
+        <div id="i3navbarOptionsText">Edit/Remove Quick Links...</div>
+        <a id="i3navbarOptionsLink"><span>&raquo;</span></a>
+      </div>
+      <table>
+        <tr id="i3navbarIcons"></tr>
+        <tr id="i3navbarCaptions"></tr>
+      </table>
+    </div>
+    <div id="i3youAreHere">
+      <div id="i3youAreHereAdd">
+        <div id="i3youAreHereAddText">Add to Quick Links...</div>
+        <a id="i3youAreHereAddLink"><span>&oplus;</span></a>
+      </div>
+      <table>
+        <tr id="i3youAreHereRow"><td id="i3youAreHereText">You are here: </td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- Navigation bar dialog: Add Quick Link -->
+  <div id="i3navbarQuickLinksAddPopup" style="display:none">
+    <table>
+      <tr>
+        <td id="i3navbarQuickLinksAddIcon" rowspan="2"></td>
+        <td class="i3navbarQuickLinksAddLabel">Label</td>
+        <td><input id="i3navbarQuickLinksAddCaption" /></td>
+      </tr>
+      <tr>
+        <td class="i3navbarQuickLinksAddLabel">Path</td>
+        <td><span id="i3navbarQuickLinksAddPath"></span></td>
+      </tr>
+    </table>
+    <div id="i3navbarQuickLinksAddStatus">
+      Saving... <img src="/$theme/client-web/img/working.gif" />
+    </div>
+  </div>
+  
+  <!-- Navigation bar dialog: Edit/Remove Quick Links -->
+  <div id="i3navbarQuickLinksEditPopup" style="display:none">
+    <div id="i3navbarQuickLinksEditHelp">
+      Drag items to re-order.  Click on an item to edit.
+    </div>
+    <div id="i3navbarQuickLinksEditGrid"></div>
+    <div id="i3navbarQuickLinksEditStatus">
+      Saving... <img src="/$theme/client-web/img/working.gif" />
+    </div>
+  </div>
+          
+  <!-- Main content area -->
+  <div id="i3contentWrapper" style="display:none">
+    <div id="i3content">
+    
+      <!-- Applet title -->
+      <h2 id="i3pageTitle"><span id="appletTitle"></span></h2>
+
+      <!-- Applet content will be placed here -->
+      <div id="appletContent"></div>
+
+      <!-- Copyright text will be placed here -->
+      <div id="i3copyright">
+        <span id="i3copyrightText"></span>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Invisible IFRAMEs for support -->
+  <iframe id="i3appletFrame" class="i3controller" name="appletFrame"></iframe>
+  <iframe id="i3historyFrame" class="i3controller" name="historyFrame"></iframe>
+
+  <!-- Begin preloading -->
+  <script type="text/javascript">
+  <!--
+    var __I3_INFO = <%= i3_info %> ;
+    var __I3_PRELOAD = <%= preload_list %> ;
+    <%= preload_script %>
+    I3Preloader.start();
+  // -->
+  </script>
+
+</body>
+
+</html>

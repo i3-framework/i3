@@ -1,0 +1,121 @@
+/* Use web-style paragraphs */
+p {
+  text-indent: 0ex;
+  margin-top: 1em;
+}
+
+/* Add light background color to inline code */
+tt {
+  background-color: #F0F0F0;
+}
+.Summary tt {
+  background-color: #E8E8C8;
+}
+
+/* Italicize instead of underline */
+u {
+  font-style: italic;
+  text-decoration: none;
+}
+
+/* Use intranet blue for heading */
+#MainTopic .CTitle {
+  background-color: #365592;
+}
+
+/* Indent paragraphs that come under h4-style headers */
+h4 + .CParagraph,
+h4 + .CParagraph + .CParagraph,
+h4 + .CParagraph + .CParagraph + .CParagraph,
+h4 + .CParagraph + .CParagraph + .CParagraph + .CParagraph {
+  padding-left: 2ex;
+}
+
+/* Lighten author/copyright/version sections slightly */
+#MainTopic h4 + .CParagraph,
+#MainTopic h4 + .CParagraph + .CParagraph,
+#MainTopic h4 + .CParagraph + .CParagraph + .CParagraph,
+#MainTopic h4 + .CParagraph + .CParagraph + .CParagraph + .CParagraph {
+  color: #404040;
+}
+
+/* Indent description sections */
+.CBody {
+  padding-left: 5ex;
+}
+
+/* Don't indent function prototype */
+.Prototype {
+  margin-left: 0px;
+  margin-bottom: 0px;
+}
+
+/* Don't indent summary */
+.Summary {
+  border-top: 1px solid #D0D0D0;
+  margin-left: 0px;
+  padding-top: 1ex;
+}
+
+/* Style modules and data models in summary */
+.SModule, .SDataModel {
+  margin-top: 1em;
+}
+.SModule .SEntry,
+.SDataModel .SEntry {
+  font-size: 10pt;
+  font-weight: bold;
+  margin-bottom: .25em;
+}
+.SModule .SEntry a {
+  color: #400000;
+}
+.SDataModel .SEntry a {
+  color: #000000;
+}
+
+/* Change default background color of classes to green */
+.CClass .CTitle {
+  background-color: #80A080;
+}
+
+/* Format modules like classes, but with gray background */
+.CModule .CTitle {
+  font-size: 18pt;
+  color: #FFFFFF; background-color: #A0A0A0;
+  padding: 10px 15px 10px 15px;
+  border-width: 2px 0; border-color: #000000;
+  margin-left: 0; margin-right: 0;
+}
+
+/* Format data models like classes, but with purple background */
+.CDataModel .CTitle {
+  font-size: 18pt;
+  color: #FFFFFF; background-color: #9080A0;
+  padding: 10px 15px 10px 15px;
+  border-width: 2px 0; border-color: #000000;
+  margin-left: 0; margin-right: 0;
+}
+
+/* Format additional method prototypes */
+.CMethod .Prototype,
+.CClassMethod .Prototype,
+.CConstructor .Prototype {
+    background-color: #F4F4F4;
+    border-color: #D0D0D0;
+}
+
+/* Format example code */
+.CCode {
+  background-color: #F4F4E4;
+  border: 1px solid #D0D0C0;
+  margin-left: 2ex;
+  margin-right: 5ex;
+  padding: 1ex 2ex 1ex 2ex;
+}
+
+/* The Default style makes parameters too light */
+.CDLEntry {
+  color: #606060;
+  font-weight: bold;
+}

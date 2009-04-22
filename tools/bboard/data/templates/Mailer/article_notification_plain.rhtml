@@ -1,0 +1,10 @@
+<% if @is_new_article %><%= @article.text %><% else %><%= @article.comments.last.text %><% end %>
+
+---------------------------------------
+To view this post, please visit:  <%= @article_link %>
+---------------------------------------
+<%= @unsubscribe_text %>
+
+    <%= @unsubscribe_link %>
+
+<%= @unsubscribe_instructions %>

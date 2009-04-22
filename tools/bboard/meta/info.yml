@@ -1,0 +1,5 @@
+name: Bulletin Board
+description: Discuss news, prayer requests, classified ads, and other topics.
+database: bboard
+privileges:
+  administer: Create/edit/delete topics and assign moderators.

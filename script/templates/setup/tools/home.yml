@@ -1,0 +1,59 @@
+# ============================================================================
+# Home Page Tool Configuration
+# ============================================================================
+
+#
+# Default items for new user home pages.
+#
+# The "news" section is a list of news feed or Bulletin Board topic permalinks.
+# The "weather" section is a list of city codes for weather reports.
+#
+defaults:
+    news:
+        - bbc-world
+    weather:
+        - 83687
+
+#
+# Weather API URLs
+# 
+# To get weather data, we recommend contacting the good folks at Accu-Weather.com and getting 
+# access to their weather API.  When you do, just add the two URLs below.
+# 
+weather_api:
+  weather_data: 
+  city_lookup: 
+
+#
+# Links to display in the left-hand sidebar of the home page.
+#
+# Each section has a name (as the "section" key), an "icon" (in
+# "tool-name/icon-base-name" format), and a list of "links".  Each link
+# requires either a "tool" key -- naming one of the tools -- or a "uri"
+# key with the full URI of a link.  Links may optionally be supplied with
+# "caption" properties to specify the text below the link, and tool links
+# may have a "path" properties to specify a sub-path for the tool.
+#
+navigation:
+    - section: Tools
+      tool: tools
+      links:
+          - tool: bboard
+          - tool: tools
+            caption: and more...
+    - section: Documents
+      tool: documents
+      links:
+          - tool: documents
+            path: Collections/Forms
+            caption: Forms
+          - tool: documents
+            path: Collections/Handbooks
+            caption: Handbooks
+          - tool: documents
+            path: Collections/Policies
+            caption: Policies
+          - tool: documents
+            caption: Department files
+          - tool: documents
+            caption: and more...

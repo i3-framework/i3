@@ -1,0 +1,88 @@
+#
+# File extension mappings
+#
+# This file maps file extensions to the images in common/img/file-types.
+#
+
+audio:
+  - aiff
+  - m4a
+  - m4p
+  - m4u
+  - mp3
+  - wav
+  
+calendar:
+  - ics
+
+compressed:
+  - bz2
+  - gz
+  - sit
+  - tar
+  - zip
+
+contact:
+  - vcf
+
+disk-image:
+  - dmg
+  - img
+  - iso
+  
+document:
+  - doc
+  - docx
+  - rtf
+
+executable:
+  - exe
+
+html:
+  - htm
+  - html
+
+image:
+  - bmp
+  - eps
+  - jpeg
+  - jpg
+  - gif
+  - png
+  - psd
+  - tif
+  - tiff
+
+pdf:
+  - pdf
+  
+presentation:
+  - ppt
+  - pptx
+  
+spreadsheet:
+  - xls
+  - xlsx
+  
+text:
+  - sql
+  - txt
+  - yml
+
+xml:
+  - plist
+  - xml
+
+video:
+  - mov
+  - mp4
+  - mpeg
+  - mpg
+  - m4v
+
+windows:
+  - asf
+  - asx
+  - avi
+  - wma
+  - wmv

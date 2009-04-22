@@ -1,0 +1,118 @@
+#!/bin/bash
+
+### BEGIN INIT INFO
+# Provides:           i3-load-balancer
+# Required-Start:     $local_fs $remote_fs $syslog $network
+# Should-Start:       
+# Required-Stop:      $local_fs $remote_fs $syslog $network
+# Should-Stop:        
+# Default-Start:      3 5
+# Default-Stop:       0 1 2 6
+# Short Description:  i3 Load Balancer
+# Description:        Starts the load balancer for i3.
+### END INIT INFO
+
+# Setup variables
+RUBY=/usr/bin/ruby
+SCRIPT_PATH=/srv/www/i3/script/server/i3-load-balancer.rb
+SCRIPT_CMD="${RUBY} ${SCRIPT_PATH}"
+PID_FILE=/var/run/i3-load-balancer.pid
+I3_USER=`id -u wwwrun`
+I3_GROUP=`id -g wwwrun`
+LOG_FILE=/srv/www/i3-local/logs/load-balancer.log
+
+# Make sure we can find the script
+test -x $SCRIPT_PATH || { echo "$SCRIPT_PATH not installed";
+    if [ "$1" = "stop" ]; then exit 0;
+    else exit 5; fi; }
+
+# Source in the rc.status calls
+. /etc/rc.status
+# Reset the status
+rc_reset
+
+
+# Function for getting the pid
+get_pid () {
+    for pid in `ls -t /proc`; do
+        if [ -d /proc/$pid ] && [ -f /proc/$pid/cmdline ]; then
+            if [ "$1" = "$(</proc/$pid/cmdline)" ]; then
+                return
+            fi
+        fi
+    done
+    pid=0
+}
+
+
+case "$1" in
+    start)
+        echo -n "Starting i3 load balancer "
+        
+        # Make sure that the log file is created and owned properly
+        if ! [ -f $LOG_FILE ]; then
+          touch $LOG_FILE
+        fi
+        
+        # Ensure that the log file is writable by the effective user
+        chown wwwrun $LOG_FILE
+        
+        # Start the process
+        /sbin/startproc -f -p $PID_FILE -u $I3_USER -g $I3_GROUP -l $LOG_FILE $SCRIPT_CMD
+        
+        # Sanity check
+        if ! [ 0 = $? ]; then
+            echo -n "(Error - "
+            case $? in 
+                2)
+                    echo -n "Invalid Arguments"
+                    ;;
+                4)
+                    echo -n "Insufficient Permission"
+                    ;;
+                5)
+                    echo -n "No Such Program"
+                    ;;
+                7)
+                    echo -n "Launch Failure"
+                    ;;
+                *)
+                    echo -n "Unspecified Error"
+                    ;;
+            esac
+            echo -n ")"
+            rc_failed
+            rc_status -v1
+            rc_exit
+        fi
+        
+        # Save the PID to a .pid file
+        get_pid `eval echo ${SCRIPT_CMD} | sed -e 's/ //g'`
+        if [ 0 = $pid ]; then
+            echo "Warning - Couldn't obtain PID file for ${SCRIPT_CMD} "
+        else
+            echo $pid > $PID_FILE
+        fi
+        rc_status -v
+        ;;
+    stop)
+        echo -n "Stopping i3 load balancer "
+        /sbin/killproc -TERM -p $PID_FILE $SCRIPT_CMD
+        rc_status -v
+        ;;
+    restart)
+        $0 stop
+        $0 start
+        rc_status
+        ;;
+    status)
+        echo -n "Checking for i3 load balancer"
+        /sbin/checkproc -p $PID_FILE $SCRIPT_CMD
+        rc_status -v
+        ;;
+    *)
+        echo "Usage: $0 {start|stop|restart|status}"
+        exit 1
+        ;;
+esac
+rc_exit

@@ -1,0 +1,88 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+  "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <link rel="stylesheet" type="text/css" href="/contacts/client-web/css/common.css" />
+  <link rel="stylesheet" type="text/css" href="/contacts/client-web/css/print.css" media="print" />
+  <script type="text/javascript" src="/common/client-web/js/tabs.js"></script>
+  <script type="text/javascript" src="/common/client-web/js/tables.js"></script>
+  <script type="text/javascript" src="/contacts/client-web/js/index.js"></script>
+  <title>Contacts</title>
+</head>
+
+<body>
+  <div id="appletContent"><div class="contacts">
+
+    <div id="contacts-loading">
+      Loading... <img src="/$theme/client-web/img/working.gif" />
+    </div>
+
+    <div id="contacts-tabs" style="display:none">
+
+      <!-- Contacts section -->
+      <!-- <div id="contacts-people" class="i3tabPanel"> -->
+        <div id="contacts-contactsTableContainer"></div>
+        <div id="contacts-contactInfoContainer">
+          <div id="contacts-contactInfoInstructions">
+            Select a name from the list at the left.
+          </div>
+          <div id="contacts-contactInfoContent" style="display:none">
+            <h4 id="contacts-contactName"></h4>
+            <p id="contacts-contactSubtitle"></p>
+            <div id="contacts-contactFieldsLoading" style="display:none">
+              Loading... <img src="/$theme/client-web/img/working.gif" />
+            </div>
+            <table id="contacts-contactFields" style="display:none">
+              <tbody id="contacts-contactFieldsBody">
+                <tr>
+                  <td class="contacts-contactLabel">e-mail</td>
+                  <td>
+                    <a href="mailto:jdoe@company.com">jdoe@company.com</a>
+                  </td>
+                </tr>
+                <tr class="contacts-contactFieldSpacer">
+                  <td colspan="2">&nbsp;</td>
+                </tr>
+                <tr>
+                  <td class="contacts-contactLabel">work extension</td>
+                  <td>
+                    x1234
+                  </td>
+                </tr>
+                <tr>
+                  <td class="contacts-contactLabel">home phone</td>
+                  <td>
+                    (123) 555-1212
+                  </td>
+                </tr>
+                <tr>
+                  <td class="contacts-contactLabel">mobile phone</td>
+                  <td>
+                    (123) 555-1212
+                  </td>
+                </tr>
+                <tr class="contacts-contactFieldSpacer">
+                  <td colspan="2">&nbsp;</td>
+                </tr>
+                <tr>
+                  <td class="contacts-contactLabel">home address</td>
+                  <td>
+                    1 Main St <br />
+                    City, ST 12345 USA
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="contacts-clear">&nbsp;</div>
+      <!-- </div> -->
+      
+    </div>
+
+  </div></div>
+</body>
+
+</html>

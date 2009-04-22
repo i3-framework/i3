@@ -1,0 +1,326 @@
+/**
+ * Stylesheet: home/client-web/css/common
+ *
+ * CSS file for the Home Page tool.
+ *
+ * Credits:
+ * 
+ *   Written by Marshall Elfstrand (marshall@vengefulcow.com).
+ * 
+ * Copyright / License:
+ * 
+ *   Copyright 2009 Mission Aviation Fellowship
+ * 
+ *   Licensed under the Apache License, Version 2.0 (the "License");
+ *   you may not use this file except in compliance with the License.
+ *   You may obtain a copy of the License at
+ * 
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ *   Unless required by applicable law or agreed to in writing, software
+ *   distributed under the License is distributed on an "AS IS" BASIS,
+ *   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *   See the License for the specific language governing permissions and
+ *   limitations under the License.
+ *
+ * Version:
+ *   $Id: common.css 82 2008-04-02 22:26:09Z nmellis $
+ */
+ 
+/* Page-wide styles */
+.home h3 {
+  color: white;
+  font-weight: normal;
+  font-size: 14px;
+  margin: 0px;
+  padding: 4px;
+}
+.homeClear {
+  clear: both;
+  height: 1px;
+}
+
+/* Home: Where to Look sidebar */
+#homeLinkList {
+  background: #F0F0F0;
+  float: left;
+  margin: 0px;
+  padding: 0px;
+  width: 150px;
+}
+#homeLinkList h3 {
+  background: #407050;
+}
+#homeLinkList h4 {
+  margin: 0px;
+  height: 32px;
+  font-size: 12px;
+  padding-top: 12px;
+}
+#homeLinkList .homeImage {
+  border: none;
+  float: left;
+  margin: 0px;
+  padding: 4px;
+}
+#homeLinkListContent {
+  border: 1px solid #C0C0C0;
+  border-top: none;
+  padding-top: 4px;
+}
+#homeLinkList ul {
+  color: #404040;
+  list-style: circle;
+  margin: 0px;
+  padding-left: 24px;
+  padding-bottom: 8px;
+}
+#homeLinkList li {
+  font-size: 12px;
+}
+#homeLinkList a {
+  text-decoration: none;
+}
+#homeLinkList li a {
+  color: #404040;
+}
+#homeLinkList li a:hover {
+  color: #0000FF;
+  text-decoration: underline;
+}
+
+/* Home: Customize link */
+#homeCustomize {
+  border: 1px solid #C0C0C0;
+  border-top: none;
+  padding-top: 8px;
+}
+#homeCustomize li a {
+  color: #404080;
+  text-decoration: underline;
+}
+#homeCustomize li a:hover {
+  color: #0000FF;
+}
+
+/* Home: News section */
+#homeNews {
+  margin-left: 160px;
+  margin-right: 160px;
+}
+#homeNews h3, #home-customNews h3 {
+  background: #602828;
+}
+#homeNews h4 {
+  background: #E0E0E0;
+  font-size: 12px;
+  font-weight: bold;
+  margin: 8px 0px 0px 0px;
+  padding: 4px;
+}
+.homeNewsSection {
+  padding: 4px;
+}
+.homeNewsSection ul {
+  margin: 0px;
+  padding-left: 18px;
+}
+.homeNewsByline {
+  color: #808080;
+}
+#homeLoading {
+  color: #808080;
+  display: none;
+  font-weight: bold;
+  margin: 4px;
+}
+
+/* Home: Weather sidebar */
+#homeWeather {
+  background: #F0F0F0;
+  float: right;
+  margin: 0px;
+  padding: 0px;
+  width: 150px;
+}
+#homeWeather h3, #home-customWeather h3 {
+  background: #406070;
+}
+.homeWeatherContent {
+  border: 1px solid #B0B0B0;
+  border-top: none;
+  margin: 0px;
+  padding: 8px 4px 4px 4px;
+}
+#home-weatherDataCredit {
+  font-size: 9px;
+  color: #666666;
+}
+#homeWeather h4 {
+  background: #C0C0C0;
+  font-size: 12px;
+  font-weight: bold;
+  margin: 0px;
+  padding: 4px;
+}
+.homeWeatherDateline {
+  color: #808080;
+  font-size: 10px;
+  font-style: italic;
+  margin: 4px 0px 4px 0px;
+  padding-left: 4px;
+}
+.homeWeatherHead {
+  background: #E0E0E0;
+  font-size: 12px;
+  font-weight: bold;
+  margin: 8px 0px 0px 0px;
+  padding: 4px;
+}
+.homeWeatherCurrentBody {
+  font-size: 11px;
+  margin: 4px 0px 4px 0px;
+  padding-left: 4px;
+}
+#homeWeather ul {
+  color: #404040;
+  list-style: circle;
+  margin: 0px;
+  padding-left: 20px;
+  padding-bottom: 12px;
+}
+#homeWeather li {
+  font-size: 11px;
+  padding-bottom: 2px;
+}
+
+/* Customize: General layout */
+#home-customNews {
+  display: none;
+  margin-right: 255px;
+}
+#home-customWeather {
+  display: none;
+  float: right;
+  width: 250px;
+}
+#home-customNewsContent {
+  margin: 0px;
+  padding-top: 5px;
+}
+#home-customWeatherContent {
+  border: 1px solid #B0B0B0;
+  border-top: none;
+  margin: 0px;
+  padding: 5px;
+}
+#home-customNews h4, #home-customWeather h4 {
+  background: #E0E0E0;
+  font-size: 12px;
+  font-weight: bold;
+  margin: 0px;
+  padding: 4px;
+}
+.home .dragInstructions {
+  color: #808080;
+  font-size: 10px;
+  font-style: italic;
+  margin: 4px;
+}
+.home .draggableBox {
+  border: 1px solid #C0C0C0;
+  cursor: move;
+  position: relative;
+  margin: 4px 0px 4px 8px;
+  padding: 4px;
+}
+.home .draggableBoxDragging {
+  background: #C0D0F0;
+  border: 1px solid #8090B0;
+  z-index: 9;
+}
+.home .draggableBoxRemove {
+  float: right;
+  font-size: 10px;
+  padding-top: 1px;
+  position: relative;
+}
+.home .draggableBoxRemove a {
+  cursor: pointer;
+}
+
+/* Customize: News section */
+#home-customNewsAvailable {
+  padding-top: 8px;
+}
+#home-customNewsAvailable h5 {
+  color: #404040;
+  font-size: 12px;
+  margin: 8px 0px 0px 0px;
+  padding-left: 8px;
+}
+#home-customNewsAvailable ul {
+  margin-top: 8px;
+  margin-bottom: 12px;
+}
+#home-customNewsAvailable p {
+  color: #808080;
+  margin-top: 8px;
+  margin-bottom: 12px;
+  padding-left: 24px;
+}
+
+/* Customize: Weather section */
+#home-customWeatherSearch {
+  padding-top: 8px;
+}
+#home-customWeatherSearch p {
+  margin-top: 8px;
+  margin-bottom: 8px;
+  padding-left: 4px;
+  white-space: nowrap;
+}
+#home-weatherSearchText {
+  width: 100px;
+}
+#home-weatherSearching {
+  color: #808080;
+  display: none;
+  font-weight: bold;
+  padding-left: 4px;
+}
+#home-weatherSearchResults {
+  color: #404040;
+  padding-left: 4px;
+}
+.home .customWeatherNotFound {
+  color: #800000;
+}
+
+/* Customize: Buttons */
+#home-customSaveCancel {
+  background: #F0E0E0;
+  border: 1px solid #B0A0A0;
+  display: none;
+  margin-top: 10px;
+  padding: 5px;
+  text-align: right;
+}
+#home-saveInstructions, #home-saveStatus, #home-saveError {
+  float: left;
+  font-size: 11px;
+  padding-left: 4px;
+}
+#home-saveInstructions {
+  color: #908080;
+  padding-top: 4px;
+}
+#home-saveStatus {
+  color: #908080;
+  display: none;
+}
+#home-saveError {
+  color: #800000;
+  display: none;
+  padding-top: 4px;
+}

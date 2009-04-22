@@ -1,0 +1,29 @@
+# ============================================================================
+#  Defaults to use when the value is ~
+# ============================================================================
+
+defaults:
+  adapter: mysql
+  host: localhost
+  
+# ============================================================================
+#  Data service definitions
+# ============================================================================
+
+services:
+  
+  # --- Intranet ---
+  i3:
+    adapter: ~
+    host: ~
+    database: i3
+    username: intranet
+    password: password
+
+  # --- Intranet Migrations ---
+  i3-migrate:
+    adapter: ~
+    host: ~
+    database: i3
+    username: intranet-migrate
+    password: secret-password
