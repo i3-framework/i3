@@ -86,7 +86,7 @@ module I3
     #     to the `match` method for optional use
     #
     def on_get(path)
-      match_string = I3.server.cgi["q"]
+      match_string = CGI.unescape(I3.server.cgi["q"])
       # TODO - return a message if the match string is empty
       I3.server.send_object(self.match(match_string, path))
     end #on_get
