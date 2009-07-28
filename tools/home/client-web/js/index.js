@@ -356,7 +356,7 @@
         ul = I3.ui.create("ul");
         for (j = 0; j < weather.forecasts.length; j++) {
           forecast = weather.forecasts[j];
-          date = self.dateFromYMD(forecast.date);
+          date = new Date(forecast.date);
           if (date.getTime() == today.getTime()) day = "Today";
           else if (date.getTime() == tomorrow.getTime()) day = "Tomorrow";
           else day = weekdays[date.getDay()];

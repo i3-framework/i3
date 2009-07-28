@@ -67,4 +67,8 @@ module ActiveSupport::JSON::Encoders
     time.httpdate.to_json
   end
   
+  define_encoder Date do |date|
+    date.strftime("%d %b %Y").to_json
+  end
+  
 end #module
