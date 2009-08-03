@@ -364,6 +364,15 @@ if (BulletinBoard.subscriptionController == null)
       editDiv.appendChild(I3.ui.text("]"));
       bylineH.appendChild(editDiv);
     }
+    if (message.can_delete) {
+      archiveDiv = I3.ui.create("div");
+      archiveDiv.className = "bboard-editLink";
+      archiveDiv.appendChild(I3.ui.text("["));
+      archiveDiv.appendChild(I3.ui.createActionLink(
+        "archive", "archive", "archive:post", self.onArchivePost));
+      archiveDiv.appendChild(I3.ui.text("]"));
+      bylineH.appendChild(archiveDiv);
+    }
 
     // Construct the author link.
     var authorA = I3.ui.create("a");
@@ -622,6 +631,61 @@ if (BulletinBoard.subscriptionController == null)
     I3.ui.hide("bbSinglePost");
     _isReloading = true;
     self.displayPost(_messagePath);
+  }
+  
+  /**
+   * Method: onArchivePost
+   *
+   * Marks the post as archived.
+   *
+   * Parameters:
+   *   e - the event info
+   */
+  @method onArchivePost(e) {
+    I3.ui.hide("bboard-archivePopupWorking");
+    I3.ui.show("bboard-archivePopupPrompt");
+    I3.ui.popupDialogWithElement(
+      I3.ui.get("bboard-archivePopup"), 
+      {
+        title: "Archive Post",
+        width: 500,
+        acceptButton: { label: "Archive", onclick: self.onPostArchive },
+        cancelButton: true
+      })
+  }
+  
+  /**
+   * Method: onPostArchive
+   *
+   * Calls the web service to mark the post as archived.
+   *
+   * Parameters:
+   *   e - the event info
+   */
+  @method onPostArchive(e) {
+    I3.ui.hide("bboard-archivePopupPrompt");
+    I3.ui.show("bboard-archivePopupWorking");
+    var wsPath = "/bboard/data/messages/" + _messagePath;
+    I3.client.deleteObject(wsPath, function(response) {
+      I3.ui.endPopupDialog();
+      if (response.isOK()) {
+        var pathComponents = _messagePath.split("/");
+        var newPath = "/bboard/topics/" + pathComponents[0];
+        I3.client.navigateTo(newPath);
+      }
+    })
+  }
+  
+  /**
+   * Method: onArchiveComment
+   *
+   * Marks the comment as archived.
+   *
+   * Parameters:
+   *   e - the event info
+   */
+  @method onArchiveComment(e) {
+    
   }
   
 }

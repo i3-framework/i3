@@ -286,6 +286,73 @@ module BulletinBoard
         send_500("Your changes could not be made.")
       end #if
     end
+    
+    #
+    # Method: on_delete
+    #
+    # Archives a post.  The user must be the author or a moderator for that topic.
+    #
+    # Parameters:
+    #   path - additional path data provided in the URI
+    #
+    def on_delete(path)
+
+      # Make sure we have a valid topic.
+      topic = find_topic(path)
+      return if topic.nil?
+      
+      account = I3.server.remote_account_as(Account)
+      author = account.person
+      
+      # See if the path matches a known format.
+      error_message = ""
+      case path
+        when %r'^/[^/ ]+/(\d{4})/(\d{2})/(\d{2})/([^/ ]+)/comments/(\d+)$'
+          # Path refers to a comment.
+          comment = find_comment(topic, $1.to_i, $2.to_i, $3.to_i, $4, $5.to_i)
+          return if comment.nil?
+          begin
+            if account.can_delete?(comment)
+              archive_comment(comment)
+            else
+              send_403("You are not the author of this comment.")
+              log.warn("Unauthorized DELETE attempted by %s to: %s" %
+                [account.to_s, path])
+            end #if
+          rescue
+            error_message = $!.to_s
+          end
+        when %r'^/[^/ ]+/(\d{4})/(\d{2})/(\d{2})/([^/ ]+)$'
+          # Path refers to an article.
+          article = find_article(topic, $1.to_i, $2.to_i, $3.to_i, $4)
+          return if article.nil?
+          begin
+            if account.can_delete?(article)
+              archive_article(article)
+            else
+              send_403("You are not the author of this message.")
+              log.warn("Unauthorized DELETE attempted by %s to: %s" %
+                [user.account.to_s, path])
+              return
+            end #if
+          rescue
+            error_message = $!.to_s
+          end
+        else
+          # Path format is not recognized.
+          send_404("The requested path could not be found.")
+          log.warn "DELETE attempted to nonexistent path: #{path}"
+          return
+      end #case
+      
+      if error_message.empty?
+        I3.server.send_object(true)
+      else
+        log.error error_message
+        send_500("Item could not be archived.")
+      end #if
+
+    end #on_delete
 
     #
     # Method: find_topic
@@ -446,6 +513,7 @@ module BulletinBoard
       response.posted_at = article.posted_at
       response.body = article.text
       response.can_edit = account.can_edit?(article)
+      response.can_delete = account.can_delete?(article)
       response.is_subscription = 
         account.subscriber.subscriptions.select { |s| s.article == article}.size > 0
       response.comments = article.comments.collect do |comment|
@@ -710,6 +778,18 @@ module BulletinBoard
     end #def
     
     #
+    # Method: archive_article
+    #
+    # Archives the article by marking its `is_deleted` flag as `true`.
+    # 
+    # Parameters:
+    #   article - the <Article> to be archived
+    #
+    def archive_article(article)
+      article.update_attribute(:is_deleted, true)
+    end #archive_article
+    
+    #
     # Method: add_comment
     # 
     # Adds a new comment to an article.
@@ -782,6 +862,18 @@ module BulletinBoard
       
     end #def
 
+    #
+    # Method: archive_comment
+    #
+    # Archives the comment by marking its `is_deleted` flag as `true`.
+    # 
+    # Parameters:
+    #   comment - the <Comment> to be archived
+    #
+    def archive_comment(comment)
+      comment.update_attribute(:is_deleted, true)
+    end #archive_comment
+    
   end #class
 
 end #module
