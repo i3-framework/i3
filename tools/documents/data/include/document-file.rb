@@ -91,9 +91,10 @@ module Documents
     #   An array of <DocumentFile> objects.
     #
     def self.find_with_permission(mode, account, pattern)
-      DocumentPlatform.check_permission(mode, account, pattern).collect do |path|
-        self.new(path)
+      files = DocumentPlatform.check_permission(mode, account, pattern).collect do |path|
+        self.new(path) rescue nil
       end #collect
+      files.compact
     end #self.find_with_permission
     
     

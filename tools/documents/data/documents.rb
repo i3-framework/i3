@@ -433,9 +433,14 @@ module Documents
           # This is an included directory that needs a folder name
           # prepended to the file name.
           DocumentPlatform.check_permission(:read, acct, "#{file.path}/*").each do |dir|
-            share = DocumentFile.new(dir)
-            share.parent_folder_levels_in_name = 1
-            section.files << share
+            begin
+              share = DocumentFile.new(dir)
+              share.parent_folder_levels_in_name = 1
+              section.files << share
+            rescue
+              log.error "Error opening file at path: #{dir}"
+              next
+            end #begin
           end #each
         else
           section.files << file
