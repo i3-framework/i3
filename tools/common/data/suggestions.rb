@@ -110,7 +110,7 @@ module I3
               "CONCAT(first_name, ' ', last_name) " + "LIKE '#{str}%'")
             search.sort! { |a,b| a.first_name.to_s <=> b.first_name.to_s }
             return search.collect { |person| 
-              I3::Suggestion.new(person.full_name, person.email) }
+              I3::Suggestion.new(person.full_name, person.email) unless person.email.empty? }.compact
           rescue
             log.error $!.backtrace
           end #begin
