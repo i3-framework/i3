@@ -91,6 +91,7 @@ module I3
   # stored as part of the record, but are provided for read-only convenience.
   # 
   class Person < I3::Record
+    set_table_name "i3.people"
     
     #
     # Constant: COUNTRIES
