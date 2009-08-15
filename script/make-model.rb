@@ -107,8 +107,9 @@ def make_model(tool_dirname, class_name)
   template["version"] = I3::VERSION_STRING
 
   # Write the template file to the target directory.
-  template.save("#{tool_dir}/data/model/#{class_name.empty? ? tool_dirname : class_name}.rb")
-  puts "- Generated i3-site/tools/#{tool_dir}/data/model/#{class_name.empty? ? tool_dirname : class_name}.rb"
+  template_name = class_name.empty? ? tool_dirname : class_name
+  template.save("#{tool_dir}/data/model/#{template_name}.rb")
+  puts "- Generated i3-site/tools/#{tool_dirname}/data/model/#{template_name}.rb"
 
 end #def
 
