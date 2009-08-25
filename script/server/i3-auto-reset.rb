@@ -60,7 +60,7 @@ module I3AutoReset
       
       begin
         @stream = OSX::FSEventStreamCreate(OSX::KCFAllocatorDefault, callback, nil, 
-                    [I3::ROOT_PATH, I3::SITE_PATH], 
+                    [I3::ROOT_PATH, I3::SITE_PATH, "#{I3::LOCAL_PATH}/config"], 
                     OSX::KFSEventStreamEventIdSinceNow, 1.0, 0)
       
         unless @stream
