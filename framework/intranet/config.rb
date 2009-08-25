@@ -132,6 +132,10 @@ module I3
     # See <framework/i3-mailer>.
     attr_reader :mail_settings
     
+    # Property: developer_settings
+    # The special developer settings to override behavior
+    attr_reader :developer_settings
+    
     #
     # Private Constructor: I3::Configuration.new
     #
@@ -162,6 +166,7 @@ module I3
       # Load additional configuration files.
       @directory_settings = load_settings_from_all_domains("directory.yml").symbolize_keys
       @mail_settings = SharedObject.convert_hashes(load_settings_from_all_domains("mail.yml"))
+      @developer_settings = load_settings_from_all_domains("developer.yml").symbolize_keys rescue {}
       
       # Set up lists of tools and data services.
       @tools = ToolList.new

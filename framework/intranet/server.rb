@@ -785,7 +785,11 @@ module I3
     #
     def remote_account_as(account_class)
       if account_class.ancestors.include? Account
-        return account_class.find_or_create(@request.params["REMOTE_USER"])
+        if (I3.config.developer_settings.has_key?(:masquerade_as_account))
+          return account_class.find_or_create(I3.config.developer_settings[:masquerade_as_account])
+        else
+          return account_class.find_or_create(@request.params["REMOTE_USER"])
+        end
       else
         raise ArgumentError,
           "The specified account class #{account_class} does not inherit " +
