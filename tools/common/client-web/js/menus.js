@@ -178,6 +178,8 @@
   // not have a sectionID to use as the basis for their ID.
   var _nextItemIndex = 0;
   
+  var _currentlySelectedItem;
+  
   // Hash of CSS class names that will be used to style the menu.
   var _styles;
 
@@ -577,6 +579,45 @@
   }
   
   /**
+   * Method: updateItem
+   *
+   * Updates an item in the menu.  The `options` hash takes the same values as <addItem>.  Any value 
+   * supplied in the hash will overwrite the value supplied to <addItem> except for the "key" 
+   * property.  If you do not wish to change the title, pass `null`.
+   *
+   * Parameters:
+   *   itemKey - the index of the item to update; can be a key if one was specified
+   *   title - the new title for the menu item; pass `null` to skip
+   *   options - an hash of key/value pairs; see <addItem> for details
+   */
+  @method updateItem(itemKey, title, options) {
+    // Find the key if looking up the section by index.
+    if (typeof itemKey == "number") {
+      if (itemKey < 0) itemKey = "";
+      else itemKey = _menu[itemKey].key;
+    }
+    
+    for (var i = 0; i < _menu.length; i++) {
+      if (_menu[i].key == itemKey) {
+        if (title)
+          _menu[i].title = title;
+        if (options) {
+          for (var key in options) {
+            if (key == "key") continue;
+            _menu[i][key] = options[key];
+          }
+        }
+        break;
+      }
+      else {
+        continue;
+      }
+    }
+    
+    self.selectItem(_currentlySelectedItem);
+  }
+  
+  /**
    * Method: selectItem
    *
    * Updates the menu item display and sends the `sectionDidBecomeVisible`
@@ -594,7 +635,8 @@
    *   itemKey - the item index or string identifier
    */
   @method selectItem(itemKey) {
-
+    _currentlySelectedItem = itemKey;
+    
     // Find the key if looking up the section by index.
     if (typeof itemKey == "number") {
       if (itemKey < 0) itemKey = "";
