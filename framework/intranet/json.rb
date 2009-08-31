@@ -46,6 +46,7 @@ require "time"
 begin
   require "json/ext"
 rescue LoadError
+  include I3::LoggingSupport
   log.info "JSON encoder can't find C extension.  Using pure ruby version."
   require "json/pure"
 end
