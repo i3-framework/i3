@@ -122,7 +122,7 @@ module BulletinBoard
       permalink_base = topic_info.name.to_permalink
       permalink = permalink_base
       next_index = 2
-      while Topic.count(["permalink = ?", permalink]) > 0
+      while Topic.count(:conditions => ["permalink = ?", permalink]) > 0
         permalink = permalink_base + "-" + next_index.to_s
         next_index += 1
       end #while
