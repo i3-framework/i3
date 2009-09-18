@@ -429,8 +429,8 @@ module I3
     #
     # Encodes the tool list in JSON format for sending to the client.
     #
-    def to_json
-      self.to_hash.to_json
+    def to_json(options = nil)
+      self.to_hash.to_json(options)
     end #def
 
     #

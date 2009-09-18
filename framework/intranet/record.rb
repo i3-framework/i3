@@ -416,8 +416,8 @@ module I3
     # Returns:
     #   The JSON string representing the record.
     #
-    def to_json
-      self.to_shared.to_json
+    def to_json(options = nil)
+      self.to_shared.to_json(options)
     end #def
 
     #
@@ -554,7 +554,6 @@ module I3
     set_inheritance_column DISABLE_INHERITANCE  # Disable table inheritance
     
     self.default_timezone = :utc         # Use GMT by default
-    self.allow_concurrency = false       # Fix threading issue
 
   end #class
   

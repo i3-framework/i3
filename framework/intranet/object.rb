@@ -155,8 +155,8 @@ module I3
     # Returns:
     #   The JSON string representing the object.
     #
-    def to_json
-      self.to_hash.to_json
+    def to_json(options = nil)
+      self.to_hash.to_json(options)
     end #def
     
     #

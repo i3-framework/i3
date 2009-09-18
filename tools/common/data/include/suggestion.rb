@@ -154,8 +154,8 @@ module I3
     # Returns:
     #   The JSON string representing the object.
     #
-    def to_json
-      { :text => self.text, :alt => self.alt }.to_json
+    def to_json(options = nil)
+      { :text => self.text, :alt => self.alt }.to_json(options)
     end #to_json
     
   end #class Suggestion

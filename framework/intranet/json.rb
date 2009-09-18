@@ -42,6 +42,7 @@
 #
 
 require "time"
+require "active_support"
 
 begin
   require "json/ext"
@@ -51,25 +52,26 @@ rescue LoadError
   require "json/pure"
 end
 
-require "active_support"
+require "json/add/rails"
 
-# Based on code from active_support/json/encoders/core.rb.
-module ActiveSupport::JSON::Encoders
-  
-  define_encoder Object do |object|
-    if object.respond_to?(:to_shared)
-      object.to_shared.to_json
+class Object
+  def to_json(options = nil)
+    if self.respond_to?(:to_shared)
+      self.to_shared.to_json(options)
     else
-      object.to_s.to_json
-    end #if
-  end
-  
-  define_encoder Time do |time|
-    time.httpdate.to_json
-  end
-  
-  define_encoder Date do |date|
-    date.strftime("%d %b %Y").to_json
-  end
-  
-end #module
+      self.to_s.to_json(options)
+    end
+  end #to_json
+end #class Object
+
+class Time
+  def to_json(options = nil)
+    self.httpdate.to_json(options)
+  end #to_json
+end #class Time
+
+class Date
+  def to_json(options = nil)
+    self.strftime("%d %b %Y").to_json(options)
+  end #to_json
+end #class Date
