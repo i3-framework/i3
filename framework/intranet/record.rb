@@ -386,14 +386,19 @@ module I3
       #
       # Hopefully this can be removed for a future release of Rails.
       #
-      def compute_type(type_name)
-        modularized_name = type_name_with_module(type_name)
-        begin
-          instance_eval(modularized_name)
-        rescue NameError => e
-          instance_eval(type_name)
-        end
-      end
+      # def compute_type(type_name)
+      #   modularized_name = type_name_with_module(type_name)
+      #   silence_warnings do
+      #     begin
+      #       puts modularized_name
+      #       class_eval(modularized_name, __FILE__, __LINE__)
+      #     rescue NameError
+      #       puts $!.message
+      #       puts "Rescue: #{type_name}"
+      #       class_eval(type_name, __FILE__, __LINE__)
+      #     end
+      #   end
+      # end
 
     end #class methods
 
