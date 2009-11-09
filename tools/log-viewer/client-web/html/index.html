@@ -1,0 +1,71 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+  "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <link rel="stylesheet" type="text/css" href="/log-viewer/client-web/css/common.css" />
+  <!-- Place additional CSS/JS links here. -->
+  <script type="text/javascript" src="/common/client-web/js/menus.js"></script>
+  <script type="text/javascript" src="/common/client-web/js/tabs.js"></script>
+  <script type="text/javascript" src="/log-viewer/client-web/js/index.js"></script>
+  <title>Log Viewer</title>
+</head>
+
+<body>
+  <div id="appletContent"><div class="log-viewer">
+    
+    <div>
+      
+      <!-- Instructions -->
+      <div id="logs-instructions">
+        <p class="instructions">Please select a set of logs to view below:</p>
+        <div id="logs-loadingLogsList">
+          Loading Available Logs...<img src="$theme/client-web/img/working.gif" />
+        </div>
+        <ul id="logs-availableLogsList" style="display:none;"></ul>
+      </div>
+      
+      <!-- Log Viewer container -->
+      <div id="logs-viewer" style="display:none;">
+        
+        <!-- Log File container -->
+        <div id="logs-main">
+          <div id="logs-optionsContainer">
+            <table>
+              <tr>
+                <td style="width:24px;">Search:</td>
+                <td>
+                  <input id="logs-query" style="width:80%;" />&nbsp;&nbsp;
+                  <input id="logs-submit-query" type="button" value="Search" />
+                </td>
+              </tr>
+              <tr>
+                <td nowrap>Back:</td>
+                <td>
+                  <input id="logs-history" size="2" value="1" /> day(s)&nbsp;&nbsp;
+                  From: <select id="logs-start-from">
+                          <option>Now</option></select>&nbsp;&nbsp;
+                  Limit To: <input id="logs-result-limit" size="4" value="250" /> entry(s)&nbsp;&nbsp;
+                  <span id="logs-hostListContainer">On Hosts: <span id="logs-hostList"></span></span>
+                </td>
+              </tr>
+            </table>
+          </div>
+          
+          <div id="logs-searching">
+            Searching... <img src="$theme/client-web/img/working.gif" />
+          </div>
+          
+          <div id="logs-results" style="display:none;"></div>
+        </div>
+        
+      </div>
+      
+    </div>
+    
+    <div style="clear:both;"></div>
+  </div></div>
+</body>
+
+</html>
